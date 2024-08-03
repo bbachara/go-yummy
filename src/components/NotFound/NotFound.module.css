@@ -1,0 +1,99 @@
+.container {
+  padding-top: 100px;
+  margin-bottom: 100px;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding-bottom: 204px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-top: 138px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    row-gap: 32px;
+  }
+}
+
+/* Domyślnie wszystkie obrazy są ukryte */
+.imgMobile,
+.imgTablet,
+.imgDesktop {
+  display: none;
+}
+
+/* Wyświetlanie obrazów na urządzeniach mobilnych (do 767px) */
+.imgMobile {
+  display: block;
+}
+
+/* Wyświetlanie obrazów na tabletach (od 768px do 1199px) */
+@media screen and (min-width: 768px) {
+  .imgMobile {
+    display: none;
+  }
+  .imgTablet {
+    display: block;
+  }
+}
+
+/* Wyświetlanie obrazów na komputerach stacjonarnych (od 1200px wzwyż) */
+@media screen and (min-width: 1200px) {
+  .imgTablet {
+    display: none;
+  }
+  .imgDesktop {
+    display: block;
+  }
+}
+
+.text {
+  width: 206px;
+  row-gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .text {
+    width: 428px;
+    row-gap: 14px;
+  }
+}
+
+.h2 {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.p {
+  color: gray;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
