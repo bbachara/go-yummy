@@ -14,7 +14,7 @@ export const PopularCategories = () => {
         setCategory(results);
       })
       .catch(() => {
-        // Notiflix.Notify.failure("Error fetching data"); can it stay?
+        Notiflix.Notify.failure('Error fetching data');
       });
   }, []);
 
