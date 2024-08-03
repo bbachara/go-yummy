@@ -1,16 +1,54 @@
+.pageContainer {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.backgroundSpacer {
+    height: 444px;
+    background-color: transparent;
+}
+
+.backgroundImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 444px);
+    background-image: url('../../../assets/AuthPages/rectangle-bg-desktop.png');
+    background-size: cover;
+    background-position: center;
+}
+
 .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 115px;
+    position: relative;
+}
+
+.orderFoodImage {
+    width: auto;
+    height: auto;
+    max-height: calc(100vh - 115px);
+}
+
+.registerForm {
     width: 500px;
     height: 484px;
     background-color: #2A2C36;
     border-radius: 30px;
     box-shadow: 0 4px 48px rgba(0, 0, 0, 0.1);
-    margin: 122px 180px 164px 760px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 44px 50px;
     box-sizing: border-box;
-    padding: 44px 50px 0 50px;
+    margin-right: 180px;
 }
+
+/* Formularz */
 
 .title {
     font-size: 28px;
