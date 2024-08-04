@@ -8,7 +8,8 @@ export const FooterContainer = styled.footer`
   color: white;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 40px 20px;
+  margin: 0 auto;
+  height: 432px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -36,7 +37,12 @@ export const FooterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.black[400]};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    align-items: flex-start; /* Zmiana tutaj */
+  }
 `;
+
 
 export const FooterMain = styled.div`
   display: flex;
@@ -49,21 +55,21 @@ export const FooterMainBlock = styled.div`
   flex-direction: column;
   align-items: center;
 
-
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start; /* Zmiana tutaj */
     width: 100%;
   }
 `;
 
 export const FirstBlock = styled.div`
-margin: 28px 116px 32px;
+  margin: 28px 116px 32px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin-bottom: 0;
+    margin: 0 16px 0 0; /* Zmiana tutaj */
   }
 `;
+
 
 export const FeaturesList = styled.ul`
   list-style: none;
@@ -91,6 +97,7 @@ export const TitleBlock = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     justify-content: flex-start;
+
   }
 `;
 
