@@ -12,7 +12,7 @@ import css from './App.module.css';
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <Router basename="/go-yummy">
         <div className={css.app}>
           <Routes>
             <Route path="/" element={<HomePage />} />
