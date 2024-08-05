@@ -6,6 +6,7 @@ import { ThemeProvider } from '@emotion/react';
 import { theme } from './components/Footer/theme';
 import { Footer } from './components/Footer/Footer';
 import { Register } from './pages/Auth/Register/Register';
+import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './components/NotFound/NotFound';
 import css from './App.module.css';
 
@@ -18,6 +19,7 @@ export const App = () => {
             <Route path="/homepage" element={<HomePage />} />
             <Route path="/" element={<WelcomePage />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/footer" element={<Footer />} />
           </Routes>

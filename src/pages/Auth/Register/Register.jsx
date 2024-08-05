@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Register.module.css';
 import orderFood from '../../../assets/AuthPages/order-food-desktop.png';
 
@@ -20,44 +21,49 @@ export const Register = () => {
       <div className={styles.backgroundImage}></div>
       <div className={styles.container}>
         <img src={orderFood} alt="Order Food" className={styles.orderFoodImage} />
-        <div className={styles.registerForm}>
-          <h2 className={styles.title}>Registration</h2>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <div className={styles.field}>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className={styles.input}
-                placeholder="Name"
-              />
-            </div>
-            <div className={styles.field}>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className={styles.input}
-                placeholder="Email"
-              />
-            </div>
-            <div className={styles.field}>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className={styles.input}
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit" className={styles.button}>Sign Up</button>
-          </form>
+        <div>
+          <div className={styles.registerForm}>
+            <h2 className={styles.title}>Registration</h2>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.field}>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className={styles.input}
+                  placeholder="Name"
+                />
+              </div>
+              <div className={styles.field}>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className={styles.input}
+                  placeholder="Email"
+                />
+              </div>
+              <div className={styles.field}>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className={styles.input}
+                  placeholder="Password"
+                />
+              </div>
+              <button type="submit" className={styles.button}>Sign Up</button>
+            </form>
+          </div>
+          <div className={styles.signInLink}>
+            <Link to="/login">Sign in</Link>
+          </div>
         </div>
       </div>
     </div>
