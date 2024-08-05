@@ -16,11 +16,25 @@ export const App = () => {
         <div className={css.app}>
           <Routes> 
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/homepage" element={<HomePage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/notfound" element={<NotFound />} />
+            <Route path="/homepage" element={
+              <>
+                <HomePage />
+                <Footer />
+              </>
+            } />
+            <Route path="/register" element={
+              <>
+                <Register />
+                <Footer />
+              </>
+            } />
+            <Route path="*" element={
+              <>
+                <NotFound />
+                <Footer />
+              </>
+            } />
           </Routes>
-          <Footer />
         </div>
       </Router>
     </ThemeProvider>
