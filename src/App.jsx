@@ -14,11 +14,11 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Router basename="/go-yummy">
         <div className={css.app}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/welcome" element={<WelcomePage />} />
+          <Routes> 
+            <Route path="/" element={<WelcomePage />} />
+            <Route path="/homepage" element={<HomePage />} />
             <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/notfound" element={<NotFound />} />
           </Routes>
           <Footer />
         </div>
