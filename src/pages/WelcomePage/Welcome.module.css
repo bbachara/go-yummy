@@ -1,0 +1,177 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 0 35px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 58.58%,
+      rgba(0, 0, 0, 0.345172) 78.98%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url('/src/assets/WelcomePage/welcome-bg-mobile.png'); 
+  
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 58.58%,
+        rgba(0, 0, 0, 0.345172) 78.98%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url('/src/assets/WelcomePage/welcome-bg-mobile@x2.png');
+    }
+  
+    @media screen and (min-width: 768px) {
+      padding: 0 135px;
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 58.58%,
+        rgba(0, 0, 0, 0.345172) 78.98%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url('/src/assets/WelcomePage/welcome-bg-tablet.png');
+  
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 58.58%,
+          rgba(0, 0, 0, 0.345172) 78.98%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        url('/src/assets/WelcomePage/welcome-bg-tablet@x2.png');
+      }
+    }
+  
+    @media screen and (min-width: 1024px) {
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 58.58%,
+        rgba(0, 0, 0, 0.345172) 78.98%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url('/src/assets/WelcomePage/welcome-bg-desktop.png');
+  
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 58.58%,
+          rgba(0, 0, 0, 0.345172) 78.98%,
+          rgba(0, 0, 0, 0) 100%
+        ),
+        url('/src/assets/WelcomePage/welcome-bg-desktop@x2.png');
+      }
+    }
+  }
+  
+  .svgWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 44px;
+  }
+  
+  .svgWrapper svg {
+    width: 54px;
+    height: 54px;
+  
+    @media screen and (min-width: 768px) {
+      width: 68px;
+      height: 68px;
+    }
+  }
+  
+  .title {
+    margin-bottom: 14px;
+    text-align: center;
+    color: white;
+    font-weight: 600; 
+    font-size: 2rem; 
+    line-height: 2rem;
+    letter-spacing: -0.02em;
+  
+    @media screen and (min-width: 768px) {
+      font-size: 2.5rem; 
+      line-height: 2.5rem;
+    }
+  }
+  
+  .subtitle {
+    display: flex;
+    max-width: 305px;
+    margin: 0 auto;
+    margin-bottom: 44px;
+    font-size: 1rem; 
+    line-height: 1.5rem;
+    letter-spacing: -0.02em;
+    color: white;
+    text-align: center;
+  
+    @media screen and (min-width: 768px) {
+      max-width: 505px;
+      margin-bottom: 40px;
+      font-size: 1.25rem; 
+      line-height: 1.5rem;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      max-width: 540px;
+    }
+  }
+  
+  .buttonsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  
+    @media screen and (min-width: 768px) {
+      gap: 18px;
+    }
+  }
+  
+  .roundedDark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 1rem; 
+    line-height: 21px;
+    text-decoration: none;
+    color: white;
+    background-color: #8baa36;
+    border-radius: 24px 44px;
+    border: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  
+    &:hover,
+    &:focus {
+      color: #FAFAFA;
+      background-color: #22252a;
+    }
+  }
+  
+  .rounded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 1rem; 
+    line-height: 21px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border-radius: 24px 44px;
+    border: 1px solid rgb(250, 250, 250);
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  
+    &:hover,
+    &:focus {
+      color: #8BAA36;
+      background-color: transparent;
+      border-color: #8BAA36;
+    }
+  }

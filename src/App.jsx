@@ -15,42 +15,30 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Router basename="/go-yummy">
         <div className={css.app}>
-          <Routes>
+          <Routes> 
             <Route path="/" element={<WelcomePage />} />
-            <Route
-              path="/homepage"
-              element={
-                <>
-                  <HomePage />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <>
-                  <Register />
-                </>
-              }
-            />
-            <Route
-              path="/signin"
-              element={
-                <>
-                  <Login />
-                </>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <>
-                  <NotFound />
-                  <Footer />
-                </>
-              }
-            />
+            <Route path="/homepage" element={
+              <>
+                <HomePage />
+                <Footer />
+              </>
+            } />
+            <Route path="/register" element={
+              <>
+                <Register />
+              </>
+            } />
+            <Route path="/signin" element={
+              <>
+                <Login />
+              </>
+            } />
+            <Route path="*" element={
+              <>
+                <NotFound />
+                <Footer />
+              </>
+            } />
           </Routes>
         </div>
       </Router>

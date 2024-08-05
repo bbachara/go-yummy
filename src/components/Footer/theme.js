@@ -26,25 +26,6 @@ export const theme = {
     bold: 700,
   },
 
-  radii: {
-    sm: '4px', //tablet-mobile delete icon bg
-    md: '6px', //button
-    lg: '8px', //title bg, recipe image, card
-    xl: '30px', //form
-  },
-
-  shadows: {
-    base: '0px 4px 48px rgba(0, 0, 0, 0.1)', //form, modal
-    select: '0px 6.51852px 7.82222px rgba(0, 0, 0, 0.0314074)', //select
-    switchBody: 'inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1)', //switch body
-    mainTitle: '0px 4px 4px rgba(0, 0, 0, 0.25)', //main title
-    paginationList: '0px 4px 4px rgba(135, 135, 135, 0.2)', //pagination list
-  },
-
-  gradients: {
-    switch: 'linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%)',
-  },
-
   colors: {
     white: {
       100: '#FFFFFF', //card-title bg

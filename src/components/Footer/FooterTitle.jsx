@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../../assets/SVG/Logo/logo.svg';
+import { ReactComponent as Logo } from '../../assets/SVG/Logo/logoInv.svg';
 
 import { TitleBlock, Title, SvgWrapper } from './Footer.styled';
 

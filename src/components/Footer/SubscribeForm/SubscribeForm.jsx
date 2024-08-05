@@ -18,7 +18,12 @@ import {
 const emailSchema = Joi.object({
   email: Joi.string()
     .email({ tlds: { allow: false } })
-    .required(),
+    .required()
+    .messages({
+      'string.email': 'Please enter a valid email address',
+      'string.empty': 'Email address is required',
+      'any.required': 'Email is required',
+    }),
 });
 
 export const SubscribeForm = () => {
