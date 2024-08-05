@@ -17,33 +17,28 @@ export const App = () => {
         <div className={css.app}>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route
-              path="/homepage"
-              element={
-                <>
-                  <HomePage />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <>
-                  <Register />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <>
-                  <NotFound />
-                  <Footer />
-                </>
-              }
-            />
+            <Route path="/homepage" element={
+              <>
+                <HomePage />
+                <Footer />
+              </>
+            } />
+            <Route path="/register" element={
+              <>
+                <Register />
+              </>
+            } />
+            <Route path="/signin" element={
+              <>
+                <Login />
+              </>
+            } />
+            <Route path="*" element={
+              <>
+                <NotFound />
+                <Footer />
+              </>
+            } />
           </Routes>
         </div>
       </Router>

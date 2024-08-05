@@ -7,10 +7,12 @@ import {
   FooterWrapper,
   FooterContainer,
   FeaturesList,
+  FooterNav,
+  FooterNavList,
+  LinkFooter,
 } from './Footer.styled';
 
 import { FooterTitle } from './FooterTitle';
-import { FooterLinks } from './FooterLinks';
 import { SubscribeForm } from './SubscribeForm/SubscribeForm';
 import { SocialLinks } from './SocialLinks/SocialLinks';
 import { FooterDown } from './FooterCopyright';
@@ -31,14 +33,32 @@ export const Footer = () => {
                   <li>Convenient and easy to use</li>
                 </FeaturesList>
               </FirstBlock>
-              <FooterLinks />
+              <FooterNav>
+                <FooterNavList>
+                  <li>
+                    <LinkFooter to="/ingredients">Ingredients</LinkFooter>
+                  </li>
+                  <li>
+                    <LinkFooter to="/add-recipes">Add recipes</LinkFooter>
+                  </li>
+                  <li>
+                    <LinkFooter to="/my-recipes">My recipes</LinkFooter>
+                  </li>
+                  <li>
+                    <LinkFooter to="/favorite">Favorite</LinkFooter>
+                  </li>
+                  <li>
+                    <LinkFooter to="/shopping-list">Shopping list</LinkFooter>
+                  </li>
+                </FooterNavList>
+              </FooterNav>
+              <SubscribeForm />
             </FooterMainBlock>
-            <SubscribeForm />
           </FooterMain>
           <SocialLinks />
         </FooterWrapper>
-        <FooterDown />
       </Main>
+      {/* <FooterDown /> */}
     </FooterContainer>
   );
 };

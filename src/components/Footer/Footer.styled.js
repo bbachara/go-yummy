@@ -2,36 +2,38 @@ import styled from '@emotion/styled';
 import { NavLink, Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
-  position: relative;
+  padding: 28px 0 18px;
   width: 100%;
+  margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.black[400]};
   color: white;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-  margin: 0 auto;
-  height: 432px;
+    padding: 50px 0 24px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    padding: 60px 40px;
+  display: flex;
+  align-items: baseline;
+  padding: 64px 0;
+  height: 414px;
   }
 `;
 
 export const Main = styled.div`
-  margin-top: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    flex-direction: row;
     justify-content: space-between;
-  }
+  };
+  
 `;
 
 export const FooterWrapper = styled.div`
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,25 +41,29 @@ export const FooterWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black[400]};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    align-items: flex-start; /* Zmiana tutaj */
   }
 `;
 
-
 export const FooterMain = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  flex-direction: column;
 `;
 
 export const FooterMainBlock = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
-    justify-content: flex-start; /* Zmiana tutaj */
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
   }
 `;
@@ -66,21 +72,48 @@ export const FirstBlock = styled.div`
   margin: 28px 116px 32px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 0 16px 0 0; /* Zmiana tutaj */
+    margin: 0;
   }
 `;
-
 
 export const FeaturesList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: center;
-  display: none; /* Hide on mobile */
+  display: none; /* Ukryj na urządzeniach mobilnych */
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 380px;
+    height: 102px;
+
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+
+    display: flex;
+    flex-direction: column;
+    list-style: inside;
     text-align: left;
-    display: block; /* Show on tablet and larger screens */
+    margin-top: 24px;
+    gap: 10px;
+  };
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 418px;
+    height: 156px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+
+    display: flex;
+    flex-direction: column;
+    list-style-position: outside;
+    margin: 40px 0 0 0;
+    gap: 10px;
   }
 `;
 
@@ -97,8 +130,7 @@ export const TitleBlock = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     justify-content: flex-start;
-
-  }
+  };
 `;
 
 export const Title = styled.h2`
@@ -136,7 +168,13 @@ export const FooterNav = styled.nav`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     justify-content: flex-start;
     margin-bottom: 0;
-  }
+  };
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  };
+  
 `;
 
 export const FooterNavList = styled.ul`
@@ -146,17 +184,30 @@ export const FooterNavList = styled.ul`
   margin: 0;
   gap: 14px;
   align-items: center;
-  width: 89px;
-  height: 146px;
-  top: 92px;
-  left: 143px;
+  list-style: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    align-items: flex-start;
+    margin: 0 0 0 173px;
+  };
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 89px;
+    height: 186px;
+    margin: -64px 0 0 159px;
+    gap: 24px;
+
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+
+
   }
 `;
 
 export const LinkFooter = styled(NavLink)`
+font-family: Poppins;
   color: #FAFAFA;
   font-weight: 500;
   font-size: 14px;
@@ -179,8 +230,14 @@ export const DownContainer = styled.div`
   flex-direction: column;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  background-color: red;
     flex-direction: row;
-    padding: 0;
+    gap: 14px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: -0.01em;
   }
 
   & > :first-of-type {
@@ -188,7 +245,6 @@ export const DownContainer = styled.div`
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 0;
-      margin-right: 14px;
     }
   }
 
