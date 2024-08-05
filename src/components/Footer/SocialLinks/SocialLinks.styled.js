@@ -13,7 +13,15 @@ export const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     @media screen and (min-width: ${theme.breakpoints[1]}) {
-        width: 134px; }
+        width: 134px;
+        margin-bottom: 24px
+ };
+
+ @media screen and (min-width: ${theme.breakpoints[2]}) {
+    width: 134px;
+    margin-top: 41px;
+    margin-bottom: 50px;
+ }
  `;
 
  export const Link = styled.a`
