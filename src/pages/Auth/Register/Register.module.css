@@ -37,6 +37,9 @@
     max-height: calc(100vh - 115px);
 }
 
+
+/* Formularz */
+
 .registerForm {
     width: 500px;
     height: 484px;
@@ -45,10 +48,7 @@
     box-shadow: 0 4px 48px rgba(0, 0, 0, 0.1);
     padding: 44px 50px;
     box-sizing: border-box;
-    margin-right: 180px;
 }
-
-/* Formularz */
 
 .title {
     font-size: 28px;
@@ -106,4 +106,19 @@
 
 .button:hover {
     color: #22252A;
+}
+
+.signInLink {
+    font-size: 16px;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.signInLink a {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+        
+.signInLink a:hover {
+    text-decoration: underline;
 }
