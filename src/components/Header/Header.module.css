@@ -1,0 +1,43 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding-top: 18px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 19px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .header {
+    padding-top: 18px;
+  }
+
+  .wrapperLogo {
+    margin-right: 187px;
+  }
+}

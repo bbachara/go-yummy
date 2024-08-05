@@ -1,0 +1,127 @@
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 161px;
+  height: 130px;
+  background-color: var(--white-color);
+  border: 1px solid var(--green-color);
+  border-radius: 8px;
+  animation-name: slide-down;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  padding: 10px;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 16px;
+    width: 177px;
+    height: 134px;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 18px;
+  }
+}
+
+.btnWrp {
+  width: 125px;
+  font-weight: 400;
+  height: 43px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .btnWrp {
+    width: 141px;
+  }
+}
+
+.editBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+  height: 23px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--dark-color);
+  line-height: 1.6;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.editBtn:hover {
+  color: var(--green-color);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.editBtn svg path {
+  /* stroke: var(--dark-color); */
+}
+
+.editSpan {
+  color: inherit;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 125px;
+  height: 43px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--dark-color);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 10px;
+}
+
+.logoutBtn:hover {
+  color: var(--green-color);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.logoutBtn svg path {
+  /* stroke: var(--grey-color); */
+}
+
+@media screen and (min-width: 768px) {
+  .editBtn {
+    margin-bottom: 32px;
+  }
+}
