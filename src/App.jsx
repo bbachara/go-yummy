@@ -6,7 +6,8 @@ import { ThemeProvider } from '@emotion/react';
 import { theme } from './components/Footer/theme';
 import { Footer } from './components/Footer/Footer';
 import { Register } from './pages/Auth/Register/Register';
-import { NotFound } from './components/NotFound/NotFound';
+import { Login } from './pages/Auth/Login/Login';
+import { NotFound } from './pages/NotFoundPage/NotFound';
 import css from './App.module.css';
 
 export const App = () => {
@@ -15,12 +16,42 @@ export const App = () => {
       <Router basename="/go-yummy">
         <div className={css.app}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<WelcomePage />} />
+            <Route
+              path="/homepage"
+              element={
+                <>
+                  <HomePage />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <>
+                  <Register />
+                </>
+              }
+            />
+            <Route
+              path="/signin"
+              element={
+                <>
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <>
+                  <NotFound />
+                  <Footer />
+                </>
+              }
+            />
           </Routes>
-          <Footer />
         </div>
       </Router>
     </ThemeProvider>
