@@ -1,6 +1,25 @@
 import css from '../Home.module.css';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Notiflix from 'notiflix';
 
 export const Hero = () => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
+  const handleNameChange = event => setSearch(event.target.value);
+  const onSubmit = event => {
+    event.preventDefault();
+    if (search.trim() === '') {
+      Notiflix.Notify.warning('Please enter a word!');
+      setSearch('');
+      return;
+    }
+    navigate(`/search?query=${search}&type=ingredients`);
+    setSearch('');
+  };
+
   return (
     <div className={css.container}>
       <div className={css.intro}>
@@ -29,13 +48,21 @@ export const Hero = () => {
             <span className={css.accent}>Delicious and healthy</span> way to
             enjoy a variety of fresh ingredients in one satisfying meal
           </p>
-          <button className={css.seeRecipesButton}>See recipes</button>
+          <Link to="/categories/Breakfast">
+            <button className={css.seeRecipesButton}>See recipes</button>
+          </Link>
         </div>
       </div>
       <div className={css.searchDiv}>
-        <form>
+        <form onSubmit={onSubmit}>
           <label className={css.searchLabel}>Search phrase</label>
-          <input className={css.searchInput} type="text"></input>
+          <input
+            className={css.searchInput}
+            type="text"
+            placeholder="What would you like to make?"
+            value={search}
+            onChange={handleNameChange}
+          ></input>
           <button className={css.searchButton}>Search</button>
         </form>
       </div>
