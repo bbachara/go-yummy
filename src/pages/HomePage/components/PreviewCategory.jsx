@@ -2,9 +2,20 @@ import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { fetchPopularCategories } from '../../../api/homePageAPI';
 import css from '../Home.module.css';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const PopularCategories = () => {
-  const [categories, setCategories] = useState([]);
+  const [popularCategories, setPopularCategories] = useState([]);
+  const navigate = useNavigate();
+  const token = useSelector(state => state.auth.token);
+  useEffect(() => {
+    const getCategories = async () => {
+      const getData = await getCategoryList(token);
+      setPopularCategories(getData);
+    };
+    getCategories();
+  }, [token]);
 
   useEffect(() => {
     fetchPopularCategories()
@@ -18,35 +29,22 @@ export const PopularCategories = () => {
 
   return (
     <div className={css.previewCategories}>
-      <ul className={css.popularCategoryUl}>
-        {categories.map(({ _id, title, category, preview }) => (
-          <li key={_id} className={css.popularCategoryLi}>
-            <div className={css.popularCategoryHeader}>
-              <h3 className={css.popularCategoryHeading}>{category}</h3>
-            </div>
-            <ul className={css.popularRecipeUl}>
-              <li className={css.popularRecipeLi}>
-                <img
-                  className={css.popularRecipeImg}
-                  alt="dish"
-                  src={preview}
-                  width="100%"
-                  height="100%"
-                />
-                <div className={css.popularRecipeName}>
-                  <a
-                    href="https://www.google.pl/"
-                    className={css.popularRecipeLink}
-                  >
-                    {title}
-                  </a>
-                </div>
-              </li>
-            </ul>
-            <button className={css.seeAll}>See all</button>
-          </li>
-        ))}
-      </ul>
+      <previewCategoryCard
+        title="Breakfast"
+        category="breakfastRecipes"
+      ></previewCategoryCard>{' '}
+      <previewCategoryCard
+        title="Miscellaneous"
+        category="miscellaneousRecipes"
+      ></previewCategoryCard>
+      <previewCategoryCard
+        title="Chicken"
+        category="chickenRecipes"
+      ></previewCategoryCard>
+      <previewCategoryCard
+        title="Desserts"
+        category="dessertRecipes"
+      ></previewCategoryCard>
       <button className={css.previewCategoriesOtherCategories}>
         Other categories
       </button>

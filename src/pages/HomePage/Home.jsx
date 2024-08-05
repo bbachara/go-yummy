@@ -1,5 +1,5 @@
-import { PopularCategories } from './components/home-page-cat-preview';
-import { Hero } from './components/hero';
+import { PopularCategories } from './components/PreviewCategory';
+import { Hero } from './components/Hero';
 
 export const HomePage = () => {
   return (
