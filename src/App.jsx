@@ -26,13 +26,11 @@ export const App = () => {
             <Route path="/register" element={
               <>
                 <Register />
-                <Footer />
               </>
             } />
             <Route path="/signin" element={
               <>
                 <Login />
-                <Footer />
               </>
             } />
             <Route path="*" element={
