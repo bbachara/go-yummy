@@ -5,6 +5,7 @@ import { WelcomePage } from './pages/WelcomePage/Welcome';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from './components/Footer/theme';
 import { Footer } from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import { Register } from './pages/Auth/Register/Register';
 import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './pages/NotFoundPage/NotFound';
@@ -17,28 +18,42 @@ export const App = () => {
         <div className={css.app}>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/homepage" element={
-              <>
-                <HomePage />
-                <Footer />
-              </>
-            } />
-            <Route path="/register" element={
-              <>
-                <Register />
-              </>
-            } />
-            <Route path="/signin" element={
-              <>
-                <Login />
-              </>
-            } />
-            <Route path="*" element={
-              <>
-                <NotFound />
-                <Footer />
-              </>
-            } />
+            <Route
+              path="/homepage"
+              element={
+                <>
+                  <Header />
+                  <HomePage />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <>
+                  <Register />
+                </>
+              }
+            />
+            <Route
+              path="/signin"
+              element={
+                <>
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <>
+                  <Header />
+                  <NotFound />
+                  <Footer />
+                </>
+              }
+            />
           </Routes>
         </div>
       </Router>
