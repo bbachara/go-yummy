@@ -6,8 +6,12 @@ import { ThemeProvider } from '@emotion/react';
 import { theme } from './components/Footer/theme';
 import { Footer } from './components/Footer/Footer';
 import { Register } from './pages/Auth/Register/Register';
+<<<<<<< Updated upstream
 import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './components/NotFound/NotFound';
+=======
+import { NotFound } from './pages/NotFoundPage/NotFound';
+>>>>>>> Stashed changes
 import css from './App.module.css';
 
 export const App = () => {
