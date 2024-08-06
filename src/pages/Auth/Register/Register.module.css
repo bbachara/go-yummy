@@ -136,3 +136,15 @@
 .signInLink a:hover {
     text-decoration: underline;
 }
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.serverError {
+    color: red;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
