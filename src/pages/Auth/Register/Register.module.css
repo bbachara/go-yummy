@@ -78,7 +78,7 @@
     background-color: #2A2C36;
     color: #FFFFFF;
     font-size: 18px;
-    padding-left: 18px;
+    padding-left: 50px;
     box-sizing: border-box;
 }
 
@@ -90,6 +90,20 @@
     outline: none;
     border: 1px solid #FFFFFF;
     opacity: 100%;
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    width: 24px;
+    height: 24px;
 }
 
 .button {
