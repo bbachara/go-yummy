@@ -1,0 +1,348 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .intro {
+    margin: 68px auto 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .soyummy {
+    font-family: Poppins;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.005em;
+    text-align: center;
+    color: #22252a;
+  }
+  .accent {
+    color: #8baa36;
+  }
+  .introParagraph {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    width: 248px;
+  }
+  .saladBowlDiv {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .saladBowlImg {
+    width: 320px;
+    height: 296px;
+  }
+  .seeRecipesWindow {
+    width: 225px;
+    height: 92px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 8px;
+    position: absolute;
+    right: 5px;
+    top: 110px;
+  }
+  .seeRecipesParagraph {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+  }
+  .seeRecipesButton {
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    color: #3e4462;
+    width: 81px;
+    height: 18px;
+    background-color: transparent;
+    border: none;
+  }
+  .searchDiv {
+    position: relative;
+  }
+  .searchLabel {
+    display: none;
+  }
+  .searchInput {
+    border: 1px solid #f0f0f0;
+    border-radius: 24px 44px;
+    width: 295px;
+    height: 52px;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  .searchButton {
+    border-radius: 24px 44px;
+    width: 113px;
+    height: 52px;
+    background-color: #22252a;
+    color: #fafafa;
+    position: absolute;
+    right: -10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 95px auto 202px;
+    column-gap: 0px;
+    align-items: flex-start;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 55px;
+    position: relative;
+  }
+  .soyummy {
+    font-family: Poppins;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.005em;
+    text-align: center;
+    color: #22252a;
+  }
+  .accent {
+    color: #8baa36;
+  }
+  .introParagraph {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    width: 362px;
+  }
+  .saladBowlDiv {
+    position: relative;
+  }
+  .saladBowlImg {
+    width: 378px;
+    height: 351px;
+  }
+  .popularRecipeLink {
+    text-decoration: none;
+    color: #22252a;
+  }
+  .seeRecipesWindow {
+    width: 261px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px;
+    position: absolute;
+    right: 45px;
+    top: 210px;
+  }
+  .seeRecipesParagraph {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+  }
+  .seeRecipesButton {
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    color: #3e4462;
+    width: 86px;
+    height: 18px;
+    background-color: transparent;
+    border: none;
+    padding: 3px 2px;
+  }
+  .searchDiv {
+    position: absolute;
+    top: 310px;
+  }
+  .searchLabel {
+    display: none;
+  }
+  .searchInput {
+    border: 1px solid #f0f0f0;
+    border-radius: 24px 44px;
+    width: 369px;
+    height: 59px;
+    background-color: #ffffff;
+    position: relative;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  .searchButton {
+    border-radius: 24px 44px;
+    width: 161px;
+    height: 59px;
+    background-color: #22252a;
+    color: #fafafa;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 62px auto 235px;
+    column-gap: 73px;
+    align-items: flex-start;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 100px;
+    position: relative;
+  }
+  .soyummy {
+    font-family: Poppins;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 100px;
+    letter-spacing: -0.005em;
+    text-align: center;
+    color: #22252a;
+  }
+  .accent {
+    color: #8baa36;
+  }
+  .introParagraph {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    width: 465px;
+  }
+  .saladBowlDiv {
+    position: relative;
+  }
+  .saladBowlImg {
+    width: 578px;
+    height: 539px;
+  }
+  .seeRecipesWindow {
+    width: 298px;
+    height: 114px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 16px;
+    position: absolute;
+    right: -60px;
+    top: 330px;
+  }
+  .seeRecipesParagraph {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+  }
+  .seeRecipesButton {
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    color: #3e4462;
+    width: 82px;
+    height: 18px;
+    background-color: transparent;
+    border: none;
+    padding: 3px 2px;
+  }
+  .searchDiv {
+    position: absolute;
+    top: 400px;
+  }
+  .searchLabel {
+    display: none;
+  }
+  .searchInput {
+    border: 1px solid #f0f0f0;
+    border-radius: 24px 44px;
+    width: 510px;
+    height: 71px;
+    background-color: #fff;
+    position: relative;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  .searchButton {
+    border-radius: 24px 44px;
+    width: 161px;
+    height: 71px;
+    background-color: #22252a;
+    color: #fafafa;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 320px) {
+  .searchButton:hover,
+  .searchButton:focus {
+    background-color: #8baa36;
+    border-color: #8baa36;
+  }
+}

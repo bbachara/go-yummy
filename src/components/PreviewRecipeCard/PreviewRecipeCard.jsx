@@ -1,12 +1,12 @@
-import css from '../Home.module.css';
+import css from './PreviewRecipeCard.module.css';
 
-export const PreviewRecipeCard = (onClick, recipe) => {
+export const PreviewRecipeCard = ({ onClick, recipe }) => {
   return (
     <li className={css.popularRecipeLi} onClick={onClick}>
       <img
         className={css.popularRecipeImg}
         alt={recipe.title}
-        src={recipe.thumb}
+        src={recipe.preview}
         width="100%"
         height="100%"
       />
