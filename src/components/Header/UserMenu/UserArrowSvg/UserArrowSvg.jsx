@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as UserArrow } from '../../icons/editPen.svg';
+import { ReactComponent as UserArrow } from '../../icons/arrowRight.svg';
 
 const UserArrowSvg = () => {
   return <UserArrow />;
