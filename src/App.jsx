@@ -9,7 +9,8 @@ import Header from './components/Header/Header';
 import { Register } from './pages/Auth/Register/Register';
 import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './pages/NotFoundPage/NotFound';
-import css from './App.module.css';
+import css from './App.module.css'; 
+import CategoriesPage from './pages/CategoriesPage/Categories';
 
 export const App = () => {
   return (
@@ -43,7 +44,14 @@ export const App = () => {
                   <Login />
                 </>
               }
-            />
+            /> 
+             <Route path="/categories" element={ 
+               <> 
+               <Header/>
+               <CategoriesPage /> 
+               <Footer /> 
+               </> 
+              } /> 
             <Route
               path="*"
               element={
