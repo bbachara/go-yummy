@@ -28,37 +28,37 @@ export const theme = {
 
   colors: {
     white: {
-      100: '#FFFFFF', //card-title bg
-      200: '#FAFAFA', //main light text color
-      300: '#EFEFEF', //switch body bg
-      400: '#F5F5F5', //textarea, inputs bg
+      100: '#FFFFFF',
+      200: '#FAFAFA',
+      300: '#EFEFEF',
+      400: '#F5F5F5',
     },
     black: {
-      100: '#000000', //notfound page text
-      200: '#23262A', //modal input, main dark text color
-      300: '#2A2C36', //form bg-color
-      400: '#22252A', //search-icon color, user name color, yummy color, black-button bg
-      500: '#1E1F28', //subscribe button
+      100: '#000000',
+      200: '#23262A',
+      300: '#2A2C36',
+      400: '#22252A',
+      500: '#1E1F28',
     },
     green: {
-      100: '#EBF3D4', //delete-icon bg, pagination number hover, ingredient card bg
-      200: '#8BAA36', //main green color
-      300: '#3CBC81', // validation success
-      400: '#656565', // pagination button color
+      100: '#EBF3D4',
+      200: '#8BAA36',
+      300: '#3CBC81',
+      400: '#656565',
     },
     gray: {
-      100: '#BDBDBD', //tab color, input text in search
-      200: '#D9D9D9', //user photo bg, gray button bg, text-aria bg, input bg
-      300: '#333333', //close button
-      400: '#001833', //category text color, page title color
-      500: '#3E4462', //card-title color,page subtitle color, ingredient title color, arrow
-      600: '#E0E0E0', //text input
-      700: '#707070', //border
+      100: '#BDBDBD',
+      200: '#D9D9D9',
+      300: '#333333',
+      400: '#001833',
+      500: '#3E4462',
+      600: '#E0E0E0',
+      700: '#707070',
       800: '#7E7E7E',
-      900: '#656565', //pagination
+      900: '#656565',
     },
     red: {
-      100: '#e74a3b', // validation error
+      100: '#e74a3b',
     },
   },
 
