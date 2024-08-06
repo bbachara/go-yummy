@@ -1,5 +1,5 @@
 import { PopularCategories } from './components/PreviewCategory';
-import { Hero } from './components/Hero';
+import { Hero } from './components/hero';
 
 export const HomePage = () => {
   return (
