@@ -1,9 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import css from '../Home.module.css';
-import { PreviewRecipeCard } from './PreviewRecipeCard';
+import css from './PreviewCategoryCard.module.css';
+import { PreviewRecipeCard } from '../PreviewRecipeCard/PreviewRecipeCard';
 
-export const previewCategoryCard = ({ title, category }) => {
+export const PreviewCategoryCard = ({ title, category }) => {
   const navigate = useNavigate();
+
+  const GoToRecipeClick = recipeId => {
+    navigate(`/recipes/${recipeId}`);
+  };
+
+  const SeeAllClick = () => {
+    navigate(`/recipes/categories/${title}`);
+  };
 
   return (
     <div className={css.popularCategoryUl}>
@@ -12,21 +20,16 @@ export const previewCategoryCard = ({ title, category }) => {
           <h3 className={css.popularCategoryHeading}>{title}</h3>
         </div>
         <ul className={css.popularRecipeUl}>
-          {category.map(({ _id, title, category, preview }) => (
+          {category.map(recipe => (
             <PreviewRecipeCard
-              title={title}
-              category={category}
               className={css.popularRecipeLi}
               key={recipe._id}
               recipe={recipe}
-              onClick={() => navigate('/recipe' + recipe._id)}
+              onClick={() => GoToRecipeClick(recipe._id)}
             />
           ))}
         </ul>
-        <button
-          className={css.seeAll}
-          onClick={() => navigate('/categories' + title)}
-        >
+        <button className={css.seeAll} onClick={SeeAllClick}>
           See all
         </button>
       </div>
