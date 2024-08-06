@@ -1,4 +1,4 @@
-import css from '../Home.module.css';
+import css from './Hero.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ export const Hero = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
-  const handleNameChange = event => setSearch(event.target.value);
+  const handleSearch = event => setSearch(event.target.value);
   const onSubmit = event => {
     event.preventDefault();
     if (search.trim() === '') {
@@ -35,12 +35,12 @@ export const Hero = () => {
         <img
           className={css.saladBowlImg}
           alt="salad bowl"
-          src={require('../../../assets/HomePage/unsplash-mobile.png')}
+          src={require('../../assets/HomePage/unsplash-desktop.png')}
           width="100%"
           height="100%"
           srcSet={`
-            ${require('../../../assets/HomePage/unsplash-mobile.png')} 1x,
-            ${require('../../../assets/HomePage/unsplash-mobile@2x.png')} 2x
+            ${require('../../assets/HomePage/unsplash-desktop.png')} 1x,
+            ${require('../../assets/HomePage/unsplash-desktop@2x.png')} 2x
           `}
         />
         <div className={css.seeRecipesWindow}>
@@ -48,7 +48,7 @@ export const Hero = () => {
             <span className={css.accent}>Delicious and healthy</span> way to
             enjoy a variety of fresh ingredients in one satisfying meal
           </p>
-          <Link to="/categories/Breakfast">
+          <Link to="/recipes/categories/Breakfast">
             <button className={css.seeRecipesButton}>See recipes</button>
           </Link>
         </div>
@@ -61,7 +61,7 @@ export const Hero = () => {
             type="text"
             placeholder="What would you like to make?"
             value={search}
-            onChange={handleNameChange}
+            onChange={handleSearch}
           ></input>
           <button className={css.searchButton}>Search</button>
         </form>

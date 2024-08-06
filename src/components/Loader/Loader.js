@@ -1,5 +1,5 @@
 import { TailSpin } from 'react-loader-spinner';
-import css from '../Styles/Loader.module.css';
+import css from './Loader.module.css';
 
 export const Loader = () => {
   return (
@@ -8,7 +8,7 @@ export const Loader = () => {
         visible={true}
         height="80"
         width="80"
-        color="rgb(255, 136, 0)"
+        color="rgb(139, 170, 54)"
         ariaLabel="tail-spin-loading"
         radius="1"
         wrapperStyle={{}}

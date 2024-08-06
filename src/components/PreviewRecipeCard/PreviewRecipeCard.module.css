@@ -1,0 +1,114 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .popularRecipeLi {
+    width: 343px;
+    height: 323px;
+    position: relative;
+  }
+  .popularRecipeImg {
+    width: 343px;
+    height: 323px;
+    border-radius: 8px;
+  }
+  .popularRecipeLink {
+    text-decoration: none;
+    color: #22252a;
+  }
+  .popularRecipeName {
+    width: 307px;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    text-align: left;
+    position: absolute;
+    top: 250px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .popularRecipeLi {
+    width: 343px;
+    height: 323px;
+    position: relative;
+  }
+  .popularRecipeImg {
+    width: 336px;
+    height: 323px;
+    border-radius: 8px;
+  }
+  .popularRecipeName {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    text-align: left;
+    position: absolute;
+    top: 250px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .popularRecipeLi {
+    width: 300px;
+    height: 323px;
+    position: relative;
+  }
+  .popularRecipeLink {
+    text-decoration: none;
+    color: #22252a;
+  }
+  .popularRecipeImg {
+    width: 300px;
+    height: 323px;
+    border-radius: 8px;
+  }
+  .popularRecipeName {
+    width: 268px;
+    height: 59px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    text-align: left;
+    position: absolute;
+    top: 250px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 320px) {
+  .popularRecipeLi:hover .popularRecipeName,
+  .popularRecipeLi:hover .popularRecipeLink,
+  .popularRecipeName:hover,
+  .popularRecipeImg:hover ~ .popularRecipeName,
+  .popularRecipeName:hover ~ .popularRecipeImg {
+    background-color: #8aa936;
+    color: #fafafa;
+  }
+}

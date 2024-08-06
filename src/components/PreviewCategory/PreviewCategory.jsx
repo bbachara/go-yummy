@@ -1,51 +1,64 @@
-import Notiflix from 'notiflix';
+import css from './PreviewCategory.module.css';
 import { useEffect, useState } from 'react';
-import { fetchPopularCategories } from '../../../api/homePageAPI';
-import css from '../Home.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { fetchPopularCategories } from 'api/homePageAPI';
+import { PreviewCategoryCard } from 'components/PreviewCategoryCard/PreviewCateogryCard';
 
 export const PopularCategories = () => {
   const [popularCategories, setPopularCategories] = useState([]);
   const navigate = useNavigate();
   const token = useSelector(state => state.auth.token);
+
   useEffect(() => {
     const getCategories = async () => {
-      const getData = await getCategoryList(token);
-      setPopularCategories(getData);
+      const dataPopularCategories = await fetchPopularCategories(token);
+      setPopularCategories(dataPopularCategories);
     };
     getCategories();
   }, [token]);
 
-  useEffect(() => {
-    fetchPopularCategories()
-      .then(({ data }) => {
-        setCategories(data.results);
-      })
-      .catch(() => {
-        Notiflix.Notify.failure('Error fetching data');
-      });
-  }, []);
+  const breakfastCateogry = popularCategories.filter(
+    popularCategory => popularCategory.category === 'Breakfast'
+  );
+
+  const miscellaneousCateogry = popularCategories.filter(
+    popularCategory => popularCategory.category === 'Miscellaneous'
+  );
+
+  const chickenCategory = popularCategories.filter(
+    popularCategory => popularCategory.category === 'Chicken'
+  );
+
+  const dessertCategory = popularCategories.filter(
+    popularCategory => popularCategory.category === 'Dessert'
+  );
+
+  const otherCategoriesClick = () => {
+    navigate(`/recipes/categories/`);
+  };
 
   return (
     <div className={css.previewCategories}>
-      <previewCategoryCard
-        title="Breakfast"
-        category="breakfastRecipes"
-      ></previewCategoryCard>{' '}
-      <previewCategoryCard
-        title="Miscellaneous"
-        category="miscellaneousRecipes"
-      ></previewCategoryCard>
-      <previewCategoryCard
-        title="Chicken"
-        category="chickenRecipes"
-      ></previewCategoryCard>
-      <previewCategoryCard
-        title="Desserts"
-        category="dessertRecipes"
-      ></previewCategoryCard>
-      <button className={css.previewCategoriesOtherCategories}>
+      {breakfastCateogry && (
+        <PreviewCategoryCard title="Breakfast" category="breakfastCategory" />
+      )}
+      {miscellaneousCateogry && (
+        <PreviewCategoryCard
+          title="Miscellaneous"
+          category="miscellaneousCateogry"
+        />
+      )}
+      {chickenCategory && (
+        <PreviewCategoryCard title="Chicken" category="chickenCategory" />
+      )}
+      {dessertCategory && (
+        <PreviewCategoryCard title="Desserts" category="dessertCategory" />
+      )}
+      <button
+        className={css.previewCategoriesOtherCategories}
+        onClick={otherCategoriesClick}
+      >
         Other categories
       </button>
     </div>
