@@ -55,7 +55,7 @@
   height: 49px;
   border: none;
   border-radius: 6px;
-  color: var(--bgColor);
+  color: var(--grey-color);
   background-color: var(--green-color);
   font-family: 'Poppins';
   font-style: normal;

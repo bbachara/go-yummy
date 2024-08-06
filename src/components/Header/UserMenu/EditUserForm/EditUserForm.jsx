@@ -11,7 +11,7 @@ const EditUserForm = ({ closeModal, container }) => {
   const viewportWidth = window.innerWidth;
   const style = {
     top: `${Math.round(rect.bottom + 15)}px`,
-    right: `${Math.round(viewportWidth - rect.right)}px`,
+    right: `${Math.round(viewportWidth - rect.right - 300)}px`,
   };
 
   const modalRef = useRef(null);

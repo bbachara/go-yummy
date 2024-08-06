@@ -38,70 +38,73 @@ const UserMenuModalForm = ({ onClose }) => {
   const userAvatarURL = '';
 
   return (
-    <div className={css.userModal}>
-      <div className={css.cont}>
-        <form onSubmit={handleSubmit}>
-          <div className={css.avatarChanger}>
-            <label htmlFor="newAvatartURL" className={css.avatarChangerLabel}>
-              <div
-                style={{
-                  backgroundImage: image ? 'none' : `url(${userAvatarURL})`,
-                }}
-                className={css.avatarPreview}
-              >
+    <>
+      <div className={css.overlay}></div> {}
+      <div className={css.userModal}>
+        <div className={css.cont}>
+          <form onSubmit={handleSubmit}>
+            <div className={css.avatarChanger}>
+              <label htmlFor="newAvatartURL" className={css.avatarChangerLabel}>
+                <div
+                  style={{
+                    backgroundImage: image ? 'none' : `url(${userAvatarURL})`,
+                  }}
+                  className={css.avatarPreview}
+                >
+                  <input
+                    type="file"
+                    name="newAvatartURL"
+                    onChange={handleImageChange}
+                    className={css.inputTypeFile}
+                    id="newAvatartURL"
+                    accept="image/*"
+                  />
+                  {!image && <span className={css.plusIcon}>+</span>}
+                  {image && (
+                    <div className={css.userAvatar}>
+                      <img
+                        src={URL.createObjectURL(image)}
+                        alt="selected"
+                        className={css.defaultImg}
+                      />
+                    </div>
+                  )}
+                </div>
+              </label>
+              {image && (
+                <button
+                  type="button"
+                  onClick={onClearImgClick}
+                  className={css.clearButton}
+                >
+                  ✖
+                </button>
+              )}
+            </div>
+            <div className={css.formFormat}>
+              <div className={css.formInputFormat}>
                 <input
-                  type="file"
-                  name="newAvatartURL"
-                  onChange={handleImageChange}
-                  className={css.inputTypeFile}
-                  id="newAvatartURL"
-                  accept="image/*"
+                  autoComplete="off"
+                  placeholder="Enter your name"
+                  type="text"
+                  name="userName"
+                  value={userName}
+                  onChange={handleUserNameChange}
+                  className={css.formInputUserMenu}
+                  ref={userMenuInput}
                 />
-                {!image && <span className={css.plusIcon}>+</span>}
-                {image && (
-                  <div className={css.userAvatar}>
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt="selected"
-                      className={css.defaultImg}
-                    />
-                  </div>
-                )}
               </div>
-            </label>
-            {image && (
-              <button
-                type="button"
-                onClick={onClearImgClick}
-                className={css.clearButton}
-              >
-                ✖
-              </button>
-            )}
-          </div>
-          <div className={css.formFormat}>
-            <div className={css.formInputFormat}>
-              <input
-                autoComplete="off"
-                placeholder="Enter your name"
-                type="text"
-                name="userName"
-                value={userName}
-                onChange={handleUserNameChange}
-                className={css.formInputUserMenu}
-                ref={userMenuInput}
-              />
+              <div className={css.divButtonClass}>
+                <button type="submit" className={css.submitButton}>
+                  Save changes
+                </button>
+              </div>
             </div>
-            <div className={css.divButtonClass}>
-              <button type="submit" className={css.submitButton}>
-                Save changes
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <MobMenuCloseBtn closeMenu={onClose} />
       </div>
-      <MobMenuCloseBtn closeMenu={onClose} />
-    </div>
+    </>
   );
 };
 
