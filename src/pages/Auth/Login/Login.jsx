@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiMail, FiLock } from 'react-icons/fi';
 import styles from './Login.module.css';
 import orderFood from '../../../assets/AuthPages/order-food-desktop.png';
 
@@ -24,26 +25,32 @@ export const Login = () => {
             <h2 className={styles.title}>Sign In</h2>
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.field}>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className={styles.input}
-                  placeholder="Email"
-                />
+                <div className={styles.inputWrapper}>
+                  <FiMail className={styles.icon} />
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className={styles.input}
+                    placeholder="Email"
+                  />
+                </div>                  
               </div>
               <div className={styles.field}>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className={styles.input}
-                  placeholder="Password"
-                />
+                <div className={styles.inputWrapper}>
+                  <FiLock className={styles.icon} />
+                  <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className={styles.input}
+                    placeholder="Password"
+                  />
+                </div>  
               </div>
               <button type="submit" className={styles.button}>Sign In</button>
             </form>
