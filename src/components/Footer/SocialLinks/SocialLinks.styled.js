@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 119px;
-    margin: 0;
+    margin-bottom: 18px;
     padding: 0;
     @media screen and (min-width: ${theme.breakpoints[1]}) {
         width: 134px;

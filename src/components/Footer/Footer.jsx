@@ -57,8 +57,8 @@ export const Footer = () => {
           </FooterMain>
           <SocialLinks />
         </FooterWrapper>
+        <FooterDown />
       </Main>
-      {/* <FooterDown /> */}
     </FooterContainer>
   );
 };

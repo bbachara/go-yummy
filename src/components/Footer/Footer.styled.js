@@ -1,15 +1,28 @@
 import styled from '@emotion/styled';
+import { theme } from './theme';
 import { NavLink, Link } from 'react-router-dom';
 
+// import SpinachMobile1x from './images/spinach-main-bg/spinach-footer-mobile-1x.webp';
+// import SpinachMobile2x from './images/spinach-main-bg/spinach-footer-mobile-2x.webp';
+// import SpinachTablet1x from './images/spinach-main-bg/spinach-footer-tablet-1x.webp';
+// import SpinachTablet2x from './images/spinach-main-bg/spinach-footer-tablet-2x.webp';
+// import SpinachDesk1x from './images/spinach-main-bg/spinach-footer-desctop-1x.webp';
+// import SpinachDesk2x from './images/spinach-main-bg/spinach-footer-desctop-2x.webp';
+
+// import MobileSpinach1x from './images/spinach-main-bg/spinach-mobile-1x.webp';
+// import MobileSpinach2x from './images/spinach-main-bg/spinach-mobile-2x.webp';
+// import DesctopSpinach1x from './images/spinach-main-bg/spinach-desctop-1x.webp';
+// import DesctopSpinach2x from './images/spinach-main-bg/spinach-desctop-2x.webp';
+
+
 export const FooterContainer = styled.footer`
-  padding: 28px 0 18px;
   width: 100%;
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.colors.black[400]};
+  background-color: ${({ theme }) => theme.colors.black[200]};
   color: white;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 50px 0 24px;
+    padding: 50px 0 0;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -38,7 +51,7 @@ export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.black[400]};
+  background-color: ${({ theme }) => theme.colors.black[200]};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
   }
@@ -201,8 +214,6 @@ export const FooterNavList = styled.ul`
     font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.02em;
-
-
   }
 `;
 
@@ -224,35 +235,48 @@ font-family: Poppins;
 
 export const DownContainer = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  flex-direction: column;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-  background-color: red;
-    flex-direction: row;
-    gap: 14px;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 14px;
-    letter-spacing: -0.01em;
-  }
+  color: ${({ theme }) => theme.colors.black[400]};
+  background-color: ${({ theme }) => theme.colors.white[100]};
+  font-family: Poppins;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: -0.01em;
+  padding: 28px 73px;
 
   & > :first-of-type {
-    margin-bottom: 10px;
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      margin-bottom: 0;
-    }
+    margin-right: 14px;
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
   }
-
   & span {
+    font-family: inherit;
     font-weight: ${({ theme }) => theme.fontWeights.regular};
     font-size: ${({ theme }) => theme.fontSizes[0]};
     line-height: ${({ theme }) => theme.fontSizes[0]};
+    letter-spacing: -0.01em;
     opacity: 0.5;
+  }
+  @media only screen and (min-width: ${theme.breakpoints[1]}) and (max-width: ${theme.breakpoints[2]}) {
+    height: 78px;
+    & > :first-of-type {
+      margin-right: 28px;
+    }
+    & span {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+  @media only screen and (min-width: ${theme.breakpoints[2]}) {
+    height: 114px;
+    & span {
+      font-size: 14px;
+      line-height: 14px;
+    }
+    & > :first-of-type {
+      margin-right: 40px;
+    }
   }
 `;
 
