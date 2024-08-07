@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import UserMenuModalForm from './UserMenuModalForm/UserMenuModalForm'; // Updated import path
+import UserMenuModalForm from './UserMenuModalForm/UserMenuModalForm';
 import EditUserForm from './EditUserForm/EditUserForm';
 import UserAvatar from './UserAvatar/UserAvatar';
 import css from './UserMenu.module.css';

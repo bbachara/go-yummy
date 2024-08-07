@@ -12,13 +12,3 @@
     z-index: 100;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .button {
-    display: block;
-    position: relative;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-}

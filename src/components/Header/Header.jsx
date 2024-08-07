@@ -1,3 +1,5 @@
+// Header.jsx
+
 import React, { useState } from 'react';
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
@@ -23,10 +25,11 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles['header-content']}>
           <HeaderLogo />
-          <HeaderNavigation />
+          {}
+          <HeaderNavigation isMenuOpen={isMenuOpen} />
+          <UserMenu user={user} />
           <MobMenuBurgerBtn openMenu={openMenu} />
           {isMenuOpen && <MobileNavMenu closeMenu={closeMenu} />}
-          <UserMenu user={user} />
           <ThemeSwitcher />
         </div>
       </header>
