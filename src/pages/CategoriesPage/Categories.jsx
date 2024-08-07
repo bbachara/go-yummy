@@ -1,132 +1,18 @@
-
-// import React, { Suspense, useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Outlet, useNavigate, useParams } from 'react-router-dom';
-// import { Tabs, Tab } from '@mui/material';
-// import { selectCategories } from 'redux/recipes/recipes.selectors';
-// import { getCategoriesThunk } from 'redux/recipes/recipes.thunk';
-// import MainLoader from 'components/MainLoader/MainLoader';
-// import { useScrollToTop } from 'hooks/useScrollToTop';
-// import styles from './CategoriesPage.module.css';
- 
-// export default function CategoriesPage() {
-//   useScrollToTop();
-//   const dispatch = useDispatch();
-//   const navigate = useNavigate();
-//   const { categoryName } = useParams();
-//   const { data: categories } = useSelector(selectCategories);
-//   const [selectedCategory, setSelectedCategory] = useState(-1);
-
-//   useEffect(() => {
-//     const index = categories.findIndex(
-//       c => categoryName && c.toLowerCase() === categoryName.toLowerCase()
-//     );
-
-//     setSelectedCategory(index === -1 ? 0 : index);
-//   }, [categories, categoryName]);
-
-//   useEffect(() => {
-//     dispatch(getCategoriesThunk());
-//   }, [dispatch]);
-
-//   const changeCategoryHandler = (_evt, newValue) => {
-//     setSelectedCategory(newValue);
-//   };
-
-//   useEffect(() => {
-//     const category = categories[selectedCategory];
-//     if (category) navigate(`${category}`, { replace: true });
-//   }, [categories, navigate, selectedCategory]);
-
-//   return (
-//     <section className={styles.categoriesPageSection}>
-//       <div className={styles.container}>
-//         <h2 className={styles.categoriesPageTitle}>Categories</h2>
-//         <div className={styles.tabsWrapper}>
-//           {selectedCategory > -1 && (
-//             <Tabs
-//               onChange={changeCategoryHandler}
-//               value={selectedCategory}
-//               variant="scrollable"
-//               scrollButtons="auto"
-//               aria-label="Tabs categories list"
-//               className={styles.tabs}
-//             >
-//               {categories.map(c => (
-//                 <Tab
-//                   key={c}
-//                   label={c}
-//                   className={styles.tab}
-//                 />
-//               ))}
-//             </Tabs>
-//           )}
-//         </div>
-//         <Suspense fallback={<MainLoader />}>
-//           <Outlet />
-//         </Suspense>
-//       </div>
-//     </section>
-//   );
-// } 
-
-//------------------------------------------------------------------//
- 
-// import React, { useEffect, useState } from 'react';
-// import { fetchPopularCategories } from '../../api/homePageAPI'; 
-// import styles from './Categories.module.css';
-
-// export default function CategoriesPage() {
-//   const [categories, setCategories] = useState([]);
-
-//   useEffect(() => {
-//     const getCategories = async () => {
-//       try {
-//         const data = await fetchPopularCategories(); // Używamy funkcji do pobrania popularnych kategorii
-//         setCategories(data);
-//       } catch (error) {
-//         console.error('Failed to fetch categories:', error);
-//       }
-//     };
-
-//     getCategories();
-//   }, []); 
-
-
-//   return (
-//     <section className={styles.categoriesPageSection}>
-//       <div className={styles.container}>
-//         <h2 className={styles.categoriesPageTitle}>Popular Categories</h2>
-//         <div className={styles.tabsWrapper}>
-//           {categories.length > 0 ? (
-//             <ul>
-//               {categories.map((category, index) => (
-//                 <li key={index}>{category.name}</li>
-//               ))}
-//             </ul>
-//           ) : (
-//             <p>Loading categories...</p>
-//           )}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-//-------------------------------------------------------------------------- 
-
-
 import React, { useEffect, useState } from 'react';
-import { fetchPopularCategories } from '../../api/homePageAPI'; 
-import styles from './Categories.module.css';
+import { fetchPopularCategories, fetchRecipesByCategory } from '../../api/homePageAPI'; 
+import styles from './Categories.module.css'; 
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YjE0YTkwZTEwNjA3YjQ3MGFmYjA5OSIsImVtYWlsIjoibWlrb2xhamJsYWpla0BnbWFpbC5jb20iLCJpYXQiOjE3MjMwNDg4NjUsImV4cCI6MTcyMzE1Njg2NX0.tx-c8hhjbxmPqe8VKktt5SUM2rjBVbrI9MGXnBjUWbE'; // Wstaw swój rzeczywisty token
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const data = await fetchPopularCategories(); // Użycie funkcji do pobrania popularnych kategorii
+        const data = await fetchPopularCategories(token);
         setCategories(data);
       } catch (error) {
         console.error('Failed to fetch categories:', error);
@@ -134,7 +20,17 @@ export default function CategoriesPage() {
     };
 
     getCategories();
-  }, []); 
+  }, []);
+
+  const handleCategoryClick = async (category) => {
+    setSelectedCategory(category);
+    try {
+      const data = await fetchRecipesByCategory(category, token);
+      setRecipes(data);
+    } catch (error) {
+      console.error(`Failed to fetch recipes for category ${category}:`, error);
+    }
+  };
 
   return (
     <section className={styles.categoriesPageSection}>
@@ -142,16 +38,38 @@ export default function CategoriesPage() {
         <h2 className={styles.categoriesPageTitle}>Popular Categories</h2>
         <div className={styles.tabsWrapper}>
           {categories.length > 0 ? (
-            <ul>
+            <ul className={styles.tabs}>
               {categories.map((category, index) => (
-                <li key={index}>{category.name}</li>
+                <li 
+                  key={index} 
+                  className={`${styles['MuiTab-root']} ${selectedCategory === category ? styles['MuiTab-root-selected'] : ''}`}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  {category}
+                </li>
               ))}
             </ul>
           ) : (
             <p>Loading categories...</p>
           )}
         </div>
+        <div>
+          {selectedCategory && recipes.length > 0 ? (
+            <ul>
+              {recipes.map((recipe, index) => (
+                <li key={index}>
+                  <h3>{recipe.title}</h3>
+                  <img src={recipe.thumb} alt={recipe.title} />
+                  <p>{recipe.description}</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            selectedCategory && <p>Loading recipes...</p>
+          )}
+        </div>
       </div>
     </section>
   );
 }
+
