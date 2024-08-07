@@ -3,20 +3,22 @@ import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import css from './MobileNavMenu.module.css';
 import MobMenuCloseBtn from './MobMenuCloseBtn/MobMenuCloseBtn';
 import { Link } from 'react-router-dom';
-import Logo from '../../../assets/SVG/Logo/logo.svg';
+import { ReactComponent as Logo } from '../../../assets/SVG/Logo/logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 const MobileNavMenu = ({ closeMenu }) => {
   return (
     <div className={css.container}>
-      <div onClick={() => closeMenu()}>
+      <div className={css.topBar}>
         <Link to="/main" className={css.logoWrapper}>
-          <Logo />
+          <Logo className={css.logo} />
         </Link>
+        <MobMenuCloseBtn className={css.mobNavBtn} closeMenu={closeMenu} />
       </div>
-      <MobMenuCloseBtn className={css.mobNavBtn} closeMenu={closeMenu} />
-      <HeaderNavigation closeMenu={closeMenu} />
-      <ThemeSwitcher />
+      <div className={css.navContent}>
+        <HeaderNavigation isMenuOpen={true} closeMenu={closeMenu} />
+        <ThemeSwitcher className={css.themeSwitcher} />
+      </div>
     </div>
   );
 };

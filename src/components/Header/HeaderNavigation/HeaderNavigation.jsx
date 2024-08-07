@@ -1,20 +1,30 @@
-import css from './HeaderNavigation.module.css';
-import MainNavLink from './MainNavLink/MainNavLink';
-import SearchNavLink from './SearchNavLink/SearchNavLink';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './HeaderNavigation.module.css';
 
-const HeaderNavigation = ({ closeMenu }) => {
+const HeaderNavigation = ({ isMenuOpen }) => {
   return (
-    <nav className={css.navMenu}>
-      <MainNavLink to="/categories" title="Categories" closeMenu={closeMenu} />
-      <MainNavLink to="/add" title="Add recipes" closeMenu={closeMenu} />
-      <MainNavLink to="/my" title="My recipes" closeMenu={closeMenu} />
-      <MainNavLink to="/favorite" title="Favorites" closeMenu={closeMenu} />
-      <MainNavLink
-        to="/shopping-list"
-        title="Shopping list"
-        closeMenu={closeMenu}
-      />
-      <SearchNavLink to="/search" title="Search" closeMenu={closeMenu} />
+    <nav
+      className={`${styles.navMenu} ${isMenuOpen ? styles.navMenuActive : ''}`}
+    >
+      <Link to="/categories" className={styles.navLink}>
+        Categories
+      </Link>
+      <Link to="/add-recipes" className={styles.navLink}>
+        Add recipes
+      </Link>
+      <Link to="/my-recipes" className={styles.navLink}>
+        My recipes
+      </Link>
+      <Link to="/favorites" className={styles.navLink}>
+        Favorites
+      </Link>
+      <Link to="/shopping-list" className={styles.navLink}>
+        Shopping list
+      </Link>
+      <Link to="/search" className={styles.navLink}>
+        Search
+      </Link>
     </nav>
   );
 };
