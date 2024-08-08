@@ -148,3 +148,92 @@
     font-size: 16px;
     margin-bottom: 16px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .orderFoodImage {
+        margin-top: 96px;
+        width: 409px;
+        height: 359px;
+
+    }
+
+    .registerForm {
+        height: 481px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .button {
+        height: 56px;
+    }
+
+    .signInLink {
+        margin-bottom: 59px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .orderFoodImage {
+        margin-top: 87px;
+        margin-bottom: -32px;
+        width: 285px;
+        height: 250px;
+    }
+
+    .registerForm {
+        width: 335px;
+        height: 350px;
+        padding: 32px 28px 40px 28px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .button {
+        width: 279px;
+        height: 45px;
+    }
+
+    .input {
+        width: 279px;
+        height: 45px;
+        font-size: 14px;
+        padding-left: 40px;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+        left: 14px;
+    }
+
+    .field {
+        margin-bottom: 12px;
+    }
+
+    .field:last-of-type {
+        margin-bottom: 28px;
+    }
+
+    .signInLink {
+        margin-bottom: 118px;
+    }
+}
