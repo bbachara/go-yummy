@@ -64,35 +64,3 @@ export const PopularCategories = () => {
     </div>
   );
 };
-
-// return (
-//   <div className={css.previewCategories}>
-//     {category.map(
-//       ({
-//         id,
-//         popularCategotyName,
-//         popularCategotyRecipes,
-//         popularCategotyImage,
-//       }) => (
-//         <ul className={css.popularCateogryUl}>
-//           <li className={css.popularCategoryLi}>
-//             <h3 className={css.popularCategoryHeading}></h3>
-//             <ul className={css.popularRecepieUl}>
-//               <li className={css.popularRecipeLi}>
-//                 <img
-//                   //alt="photo of a dish" possibly alt will be in the api
-//                   src={``}
-//                 />
-//                 <div className={css.popularRecipeName}></div>
-//               </li>
-//             </ul>
-//           </li>
-//           <button className={css.seeAll}>See all</button>
-//         </ul>
-//       )
-//     )}
-//     <button className={css.previewCategoriesOtherCategories}>
-//       Other categories
-//     </button>
-//   </div>
-// );
