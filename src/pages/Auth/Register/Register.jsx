@@ -4,7 +4,12 @@ import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 import axios from 'axios';
 import Joi from 'joi';
 import styles from './Register.module.css';
-import orderFood from '../../../assets/AuthPages/order-food-desktop.png';
+import orderFoodDesktop from '../../../assets/AuthPages/order-food-desktop.png';
+import orderFoodTablet from '../../../assets/AuthPages/order-food-tablet.png';
+import orderFoodMobile from '../../../assets/AuthPages/order-food-mobile.png';
+import orderFoodDesktop2x from '../../../assets/AuthPages/order-food-desktop@x2.png';
+import orderFoodTablet2x from '../../../assets/AuthPages/order-food-tablet@x2.png';
+import orderFoodMobile2x from '../../../assets/AuthPages/order-food-mobile@x2.png';
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -52,7 +57,16 @@ export const Register = () => {
       <div className={styles.backgroundSpacer}></div>
       <div className={styles.backgroundImage}></div>
       <div className={styles.container}>
-        <img src={orderFood} alt="Order Food" className={styles.orderFoodImage} />
+        <img 
+          src={orderFoodDesktop} 
+          alt="Order Food" 
+          className={styles.orderFoodImage} 
+          srcSet={`${orderFoodDesktop} 1920w, ${orderFoodTablet} 768w, ${orderFoodMobile} 480w, 
+                   ${orderFoodDesktop2x} 2x, ${orderFoodTablet2x} 2x, ${orderFoodMobile2x} 2x`} 
+          sizes="
+            (max-width: 767px) 285px, 
+            (min-width: 768px) and (max-width: 1439px) 409px, 500px"
+        />
         <div>
           <div className={styles.registerForm}>
             <h2 className={styles.title}>Registration</h2>
