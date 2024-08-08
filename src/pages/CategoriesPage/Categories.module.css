@@ -1,83 +1,254 @@
+
+.categoriesPageSection {
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+@media screen and (min-width: 768px) {
   .categoriesPageSection {
-    height: 100%;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 72px;
+    padding-bottom: 200px;
   }
-  
-  @media screen and (min-width: 768px) {
-    .categoriesPageSection {
-      padding-top: 72px;
-      padding-bottom: 200px;
-    }
+}
+
+@media screen and (min-width: 1440px) {
+  .categoriesPageSection {
+    padding-top: 100px;
   }
-  
-  @media screen and (min-width: 1440px) {
-    .categoriesPageSection {
-      padding-top: 100px;
-    }
-  }
-  
+}
+
+.categoriesPageTitle {
+  margin-bottom: 50px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'liga' off;
+  color: #001833;
+}
+
+@media screen and (min-width: 768px) {
   .categoriesPageTitle {
-    margin-bottom: 50px;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    font-feature-settings: 'liga' off;
-    color: #001833;
+    font-size: 32px;
   }
-  
-  @media screen and (min-width: 768px) {
-    .categoriesPageTitle {
-      font-size: 32px;
-    }
+}
+
+@media screen and (min-width: 1440px) {
+  .categoriesPageTitle {
+    margin-bottom: 100px;
+    font-size: 44px;
   }
-  
-  @media screen and (min-width: 1440px) {
-    .categoriesPageTitle {
-      margin-bottom: 100px;
-      font-size: 44px;
-    }
-  }
-  
-  .tabsWrapper {
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .tabs .MuiTabs-indicator {
-    background-color: #8baa36;
-  }
-  
+}
+
+.tabsWrapper {
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs .MuiTabs-indicator {
+  background-color: #8baa36;
+}
+
+.tabs .MuiTab-root {
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #e0e0e0;
+  padding: 0 14px;
+  padding-bottom: 28px;
+  min-width: auto; 
+}
+
+.tabs .MuiTab-root.Mui-selected {
+  color: #8baa36;
+}
+
+.tabs .MuiTab-root:hover {
+  color: #8baa36;
+}
+
+@media screen and (min-width: 768px) {
   .tabs .MuiTab-root {
-    text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1;
-    color: #e0e0e0;
-    padding: 0 14px;
-    padding-bottom: 28px;
-    min-width: auto; 
+    padding: 0 27px;
+    font-size: 18px;
   }
-  
-  .tabs .MuiTab-root.Mui-selected {
-    color: #8baa36;
-  }
-  
-  .tabs .MuiTab-root:hover {
-    color: #8baa36;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .tabs .MuiTab-root {
-      padding: 0 27px;
-      font-size: 18px;
-    }
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.categoriesPageSection {
+height: 100%;
+padding-top: 50px; /* Domyślnie odstęp 50px */
+padding-bottom: 100px;
+}
+
+@media screen and (min-width: 768px) {
+.categoriesPageSection {
+  padding-top: 50px; /* Odstęp 50px dla tabletów */
+  padding-bottom: 200px;
+} 
+.boxcategories{ 
+  margin-top: 50px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+.categoriesPageSection {
+  padding-top: 50px; /* Odstęp 50px dla desktopów */
+} 
+.boxcategories{ 
+  margin-top: 50px;
+}
+}
+
+@media screen and (max-width: 767px) {
+.categoriesPageSection {
+  padding-top: 32px; /* Odstęp 32px dla mobilnych */
+} 
+.boxcategories{ 
+  margin-top: 32px;
+}
+}
+
+.categoriesPageTitle {
+margin-bottom: 50px;
+font-weight: 600;
+font-size: 28px;
+line-height: 1;
+letter-spacing: -0.02em;
+font-feature-settings: 'liga' off;
+color: #001833;
+}
+
+@media screen and (min-width: 768px) {
+.categoriesPageTitle {
+  font-size: 32px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+.categoriesPageTitle {
+  margin-bottom: 100px;
+  font-size: 44px;
+}
+}
+
+.tabsWrapper {
+border-bottom: 1px solid #ddd;
+}
+
+.tabs {
+display: flex;
+justify-content: space-between;
+padding: 0;
+margin: 0;
+list-style: none;
+}
+
+.tabs .MuiTabs-indicator {
+background-color: #8baa36;
+}
+
+.tabs .MuiTab-root {
+flex: 1;
+text-align: center;
+text-transform: capitalize;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 1;
+color: #e0e0e0;
+padding: 10px 0;
+cursor: pointer;
+}
+
+.tabs .MuiTab-root.Mui-selected {
+color: #8baa36;
+}
+
+.tabs .MuiTab-root:hover {
+color: #8baa36;
+}
+
+@media screen and (min-width: 768px) {
+.tabs .MuiTab-root {
+  font-size: 18px;
+}
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.recipeList {
+list-style: none;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+/* Domyślnie na mobile: 1 w rzędzie */
+.recipeItem {
+position: relative;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 0;
+width: 100%;
+box-sizing: border-box;
+height: 250px;
+overflow: hidden;
+display: flex;
+align-items: flex-end;
+}
+
+.recipeImage {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: 1;
+}
+
+.recipeItem h3 {
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translateX(-50%);
+width: 80%;
+height: 20%;
+background: white;
+color: #001833;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 2;
+margin: 0;
+text-align: center;
+}
+
+
+/* Na tabletach: 2 w rzędzie */
+@media screen and (min-width: 768px) {
+.recipeItem {
+  width: calc(50% - 20px);
+}
+}
+
+/* Na desktopach: 4 w rzędzie */
+@media screen and (min-width: 1200px) {
+.recipeItem {
+  width: calc(25% - 20px);
+}
+}
