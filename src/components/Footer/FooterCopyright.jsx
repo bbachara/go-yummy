@@ -1,4 +1,4 @@
-import { DownContainer } from "./Footer.styled";
+import { DownContainer } from './Footer.styled';
 
 export const FooterDown = () => {
   return (
