@@ -2,18 +2,9 @@ import styled from '@emotion/styled';
 import { theme } from './theme';
 import { NavLink, Link } from 'react-router-dom';
 
-// import SpinachMobile1x from './images/spinach-main-bg/spinach-footer-mobile-1x.webp';
-// import SpinachMobile2x from './images/spinach-main-bg/spinach-footer-mobile-2x.webp';
-// import SpinachTablet1x from './images/spinach-main-bg/spinach-footer-tablet-1x.webp';
-// import SpinachTablet2x from './images/spinach-main-bg/spinach-footer-tablet-2x.webp';
-// import SpinachDesk1x from './images/spinach-main-bg/spinach-footer-desctop-1x.webp';
-// import SpinachDesk2x from './images/spinach-main-bg/spinach-footer-desctop-2x.webp';
-
-// import MobileSpinach1x from './images/spinach-main-bg/spinach-mobile-1x.webp';
-// import MobileSpinach2x from './images/spinach-main-bg/spinach-mobile-2x.webp';
-// import DesctopSpinach1x from './images/spinach-main-bg/spinach-desctop-1x.webp';
-// import DesctopSpinach2x from './images/spinach-main-bg/spinach-desctop-2x.webp';
-
+import SpinachMobile1x from "./images/spinach-main-bg/SpinachMobile1x.png";
+import SpinachTablet1x from "./images/spinach-main-bg/SpinachTablet1x.png";
+import SpinachDesktop1x from "./images/spinach-main-bg/SpinachDesktop1x.png";
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -52,9 +43,6 @@ export const FooterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.black[200]};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-  }
 `;
 
 export const FooterMain = styled.div`
@@ -235,16 +223,20 @@ font-family: Poppins;
 
 export const DownContainer = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  
+  width: 100%;
   color: ${({ theme }) => theme.colors.black[400]};
-  background-color: ${({ theme }) => theme.colors.white[100]};
   font-family: Poppins;
   font-size: 10px;
   line-height: 10px;
   letter-spacing: -0.01em;
-  padding: 28px 73px;
+  padding: 28px 0;
+
+  background: ${({ theme }) => theme.colors.white[200]} url(${SpinachMobile1x}) no-repeat;
+  background-position: right -50px bottom -70px;
+  background-size: 216px 222px;
 
   & > :first-of-type {
     margin-right: 14px;
@@ -258,7 +250,14 @@ export const DownContainer = styled.div`
     letter-spacing: -0.01em;
     opacity: 0.5;
   }
+
   @media only screen and (min-width: ${theme.breakpoints[1]}) and (max-width: ${theme.breakpoints[2]}) {
+
+  padding: 32px 0;
+    background: ${({ theme }) => theme.colors.white[200]} url(${SpinachTablet1x})
+    no-repeat;
+    background-position: right -70px bottom -150px;
+    background-size: 393px 404px;
     height: 78px;
     & > :first-of-type {
       margin-right: 28px;
@@ -269,13 +268,18 @@ export const DownContainer = styled.div`
     }
   }
   @media only screen and (min-width: ${theme.breakpoints[2]}) {
-    height: 114px;
+
+  padding: 50px 0;
+    background: ${({ theme }) => theme.colors.white[200]} url(${SpinachDesktop1x})
+      no-repeat;
+    background-position: right -70px bottom -230px;
+    background-size: 593px 611px;
+  }
     & span {
       font-size: 14px;
       line-height: 14px;
     }
     & > :first-of-type {
-      margin-right: 40px;
     }
   }
 `;
