@@ -12,8 +12,13 @@
 }
 
 .plusIcon {
-  font-size: 24px;
-  color: var(--dark-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--green-color);
+  border-radius: 50%;
+
   position: absolute;
   bottom: -6px;
   right: 13px;
@@ -92,7 +97,7 @@
   justify-content: center;
   align-items: center;
   top: 35%;
-  left: 35%;
+  left: 25%;
   transform: translate(-50%, -50%);
   width: 330px;
   height: 358px;
@@ -135,7 +140,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--green-color);
-  color: var(--dark-color);
+  color: var(--white-color);
   border: none;
   border-radius: 6px;
   font-family: 'Poppins';
@@ -146,7 +151,7 @@
 }
 
 .submitButton:hover {
-  background-color: var(--green-color);
+  color: var(--dark-color);
 }
 
 .formInputArea {

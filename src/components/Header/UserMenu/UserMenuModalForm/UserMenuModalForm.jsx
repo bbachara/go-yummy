@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from './UserMenuModalForm.module.css';
 import MobMenuCloseBtn from 'components/Header/MobileNavMenu/MobMenuCloseBtn/MobMenuCloseBtn';
+import { ReactComponent as PlusIcon } from 'components/Header/icons/plusIcon.svg';
 
 const UserMenuModalForm = ({ onClose }) => {
   const userMenuInput = useRef(null);
@@ -39,7 +40,7 @@ const UserMenuModalForm = ({ onClose }) => {
 
   return (
     <>
-      <div className={css.overlay}></div> {}
+      <div className={css.overlay}></div>
       <div className={css.userModal}>
         <div className={css.cont}>
           <form onSubmit={handleSubmit}>
@@ -59,7 +60,7 @@ const UserMenuModalForm = ({ onClose }) => {
                     id="newAvatartURL"
                     accept="image/*"
                   />
-                  {!image && <span className={css.plusIcon}>+</span>}
+                  {!image && <PlusIcon className={css.plusIcon} />}
                   {image && (
                     <div className={css.userAvatar}>
                       <img
