@@ -5,7 +5,7 @@ export const fetchCategories = createAsyncThunk(
   'categories/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await instance.get('recipes/category-list');
+      const response = await instance.get('/recipes/category-list');
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

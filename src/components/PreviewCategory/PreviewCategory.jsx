@@ -1,22 +1,24 @@
 import css from './PreviewCategory.module.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { fetchPopularCategories } from 'api/homePageAPI';
+import { useDispatch } from 'react-redux';
+import { fetchCategories } from '../../redux/recipes/categories/operations';
 import { PreviewCategoryCard } from 'components/PreviewCategoryCard/PreviewCateogryCard';
 
 export const PopularCategories = () => {
+  const dispatch = useDispatch();
   const [popularCategories, setPopularCategories] = useState([]);
   const navigate = useNavigate();
-  const token = useSelector(state => state.auth.token);
+  // const token = useSelector(state => state.auth.token);
+
+  const getCategories = async () => {
+    const dataPopularCategories = await fetchCategories();
+    setPopularCategories(dataPopularCategories);
+  };
 
   useEffect(() => {
-    const getCategories = async () => {
-      const dataPopularCategories = await fetchPopularCategories(token);
-      setPopularCategories(dataPopularCategories);
-    };
-    getCategories();
-  }, [token]);
+    dispatch(getCategories());
+  }, [dispatch]);
 
   const breakfastCateogry = popularCategories.filter(
     popularCategory => popularCategory.category === 'Breakfast'
@@ -37,6 +39,8 @@ export const PopularCategories = () => {
   const otherCategoriesClick = () => {
     navigate(`/recipes/categories/`);
   };
+
+  console.log(setPopularCategories);
 
   return (
     <div className={css.previewCategories}>
