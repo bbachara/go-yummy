@@ -39,8 +39,14 @@
   color: var(--dark-color);
   font-size: 16px;
   transition: color 0.2s ease;
+}
 
-  &:hover {
-    color: var(--green-color);
+.navLink:hover {
+  color: var(--green-color);
+}
+
+@media screen and (max-width: 1440px) {
+  .navLink {
+    font-size: 30px;
   }
 }

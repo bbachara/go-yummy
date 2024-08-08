@@ -4,7 +4,11 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: var(--grey-color);
+  background-color: #dbe7c3;
+  background-image: url('../icons/spinach-bottom-right-mobile.png');
+  background-size: auto;
+  background-position: bottom right;
+  background-repeat: no-repeat;
   z-index: 10000;
   animation-name: slide-down;
   animation-duration: 500ms;
@@ -12,11 +16,24 @@
   animation-fill-mode: forwards;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    background-image: url('../icons/spinach-bottom-right-tablet.png');
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    background-image: url('../icons/spinach-bottom-right-tablet@x2.png');
+  }
+}
+
 .logoWrapper {
   position: absolute;
   top: 15px;
   left: 15px;
   z-index: 10;
+  cursor: pointer;
 }
 
 .mobNavBtn {
@@ -36,8 +53,35 @@
   height: 100%;
 }
 
+.navLink {
+  font-size: 20px;
+  color: var(--dark-color);
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--green-color);
+}
+
 .themeSwitcher {
   position: absolute;
   bottom: 20px;
   left: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    background-image: url('../icons/spinach-bottom-right-tablet@x2.png');
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

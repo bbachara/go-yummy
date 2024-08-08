@@ -4,7 +4,7 @@ import { ReactComponent as EditPen } from '../../icons/editPen.svg';
 import UserArrowSvg from 'components/Header/UserMenu/UserArrowSvg/UserArrowSvg';
 import UserMenuModalForm from 'components/Header/UserMenu/UserMenuModalForm/UserMenuModalForm';
 
-const EditUserForm = ({ closeModal, container }) => {
+const EditUserForm = ({ closeModal, container, openConfirm }) => {
   const [isUserMenuOpen, setUserMenuOpen] = useState(false);
 
   const rect = container.getBoundingClientRect();
@@ -59,6 +59,7 @@ const EditUserForm = ({ closeModal, container }) => {
   };
 
   const logOutBtnClickHandle = () => {
+    openConfirm();
     closeModal();
   };
 
@@ -71,8 +72,12 @@ const EditUserForm = ({ closeModal, container }) => {
             <EditPen className={css.editPen} />
           </button>
 
-          <div onClick={logOutBtnClickHandle} className={css.btnWrp}>
-            <button type="button" className={css.logoutBtn}>
+          <div className={css.btnWrp}>
+            <button
+              onClick={logOutBtnClickHandle}
+              type="button"
+              className={css.logoutBtn}
+            >
               Log out
               <UserArrowSvg />
             </button>
