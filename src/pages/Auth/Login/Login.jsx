@@ -52,16 +52,12 @@ export const Login = () => {
       <div className={styles.backgroundSpacer}></div>
       <div className={styles.backgroundImage}></div>
       <div className={styles.container}>
-        <img 
-          src={orderFoodDesktop} 
-          alt="Order Food" 
-          className={styles.orderFoodImage} 
-          srcSet={`${orderFoodDesktop} 1920w, ${orderFoodTablet} 768w, ${orderFoodMobile} 480w, 
-                   ${orderFoodDesktop2x} 2x, ${orderFoodTablet2x} 2x, ${orderFoodMobile2x} 2x`} 
-          sizes="
-            (max-width: 767px) 285px, 
-            (min-width: 768px) and (max-width: 1439px) 409px, 500px"
-        />
+        <picture>
+          <source media="(min-width: 1440px)" srcSet={`${orderFoodDesktop} 1x, ${orderFoodDesktop2x} 2x`} />
+          <source media="(min-width: 768px) and (max-width: 1439px)" srcSet={`${orderFoodTablet} 1x, ${orderFoodTablet2x} 2x`} />
+          <source media="(max-width: 767px)" srcSet={`${orderFoodMobile} 1x, ${orderFoodMobile2x} 2x`} />
+          <img src={orderFoodMobile} alt="Order Food" className={styles.orderFoodImage} />
+        </picture>
         <div className={styles.formContainer}>
           <div className={styles.registerForm}>
             <h2 className={styles.title}>Sign In</h2>
