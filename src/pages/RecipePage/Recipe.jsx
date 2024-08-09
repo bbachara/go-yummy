@@ -1,39 +1,51 @@
-import css from './Recipe.module.css';
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { getOwnRecipeById, getRecipeById } from 'src/api/recipeAPI';
+import RecipeInfo from './RecipeComponents/RecipeInfo';
+import RecipeIngredients from './RecipeComponents/RecipeIngredients';
+import RecipePreparation from './RecipeComponents/RecipePreparation';
+import Loader from 'src/components/Loader/Loader';
+import RecipesNotFound from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
 
 export const Recipe = () => {
-  const [favorites, setFavorites] = useState([]);
-  const isFavorite = favorites.includes(recipe.id);
+  const { recipeId } = useParams();
+  const { search } = useLocation();
 
-  const handleToggleFavorite = () => {
-    if (isFavorite) {
-      setFavorites(favorites.filter(id => id !== recipe.id));
-    } else {
-      setFavorites([...favorites, recipe.id]);
-    }
-  };
+  const [recipe, setRecipe] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      setIsLoading(true);
+      try {
+        const data = search
+          ? await getOwnRecipeById(recipeId)
+          : await getRecipeById(recipeId);
+        setRecipe(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchRecipe();
+  }, [recipeId, search]);
+
+  if (isLoading) return <Loader />;
+
+  if (!recipe) return <RecipesNotFound text="Can't find your recipe..." />;
 
   return (
-    <div className={css.container}>
-      <section className={css.recipeInfo}>
-        <dev className={css.text}>
-          <h1 className={css.recipeName}>{recipe.name}</h1>
-          <p className={css.recipeDesc}>{recipe.desc}</p>
-        </dev>
-        <button className={css.button} onClick={handleToggleFavorite}>
-          {isFavorite
-            ? 'Remove from favorite recipes'
-            : 'Add to favorite recipes'}
-        </button>
-        <div className={css.time}>
-          <svg className={css.clockIcon} width="14" height="14">
-            <use href="./assets/icons.svg#icon-clock" />
-          </svg>
-          <p className={css.recipePrepTime}>{recipe.time}</p>
-        </div>
-      </section>
-      <section className={css.recipeIngredientList}></section>
-      <section className={css.recipePreparation}></section>
+    <div>
+      <RecipeInfo
+        title={recipe.title}
+        description={recipe.description}
+        time={recipe.time}
+      />
+      <RecipeIngredients ingredients={recipe.ingredients} recipeId={recipeId} />
+      <RecipePreparation recipe={recipe} />
     </div>
   );
 };
