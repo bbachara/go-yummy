@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { fetchPopularCategories, fetchRecipesByCategory } from '../../api/homePageAPI'; 
 import styles from './Categories.module.css'; 
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YjE0YTkwZTEwNjA3YjQ3MGFmYjA5OSIsImVtYWlsIjoibWlrb2xhamJsYWpla0BnbWFpbC5jb20iLCJpYXQiOjE3MjMxMzczMzAsImV4cCI6MTcyMzI0NTMzMH0.Tvqpp405wpNT0bJ6ISvnKsXfcRMMmT4Ocqv7U32zKWI'; // Wstaw swój rzeczywisty token
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YjE0YTkwZTEwNjA3YjQ3MGFmYjA5OSIsImVtYWlsIjoibWlrb2xhamJsYWpla0BnbWFpbC5jb20iLCJpYXQiOjE3MjMyMjYzMDIsImV4cCI6MTcyMzMzNDMwMn0.pyv0SUpeRc31UbPstzyC_32rbeaS8C1iH8vknG76Qyo'; // Wstaw swój rzeczywisty token
+ 
+// const token = process.env.REACT_APP_API_TOKEN; 
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
