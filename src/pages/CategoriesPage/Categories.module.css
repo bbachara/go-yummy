@@ -252,3 +252,91 @@ text-align: center;
   width: calc(25% - 20px);
 }
 }
+ 
+.tabsWrapper {
+  border-bottom: 1px solid #ddd;
+  overflow-x: auto; /* Pozwala na przewijanie w poziomie */
+  white-space: nowrap; /* Zapobiega zawijaniu się elementów */
+}
+
+.tabs {
+  display: inline-flex; /* Ustawia elementy w jednym rzędzie */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap; /* Zapobiega zawijaniu się elementów */
+}
+
+.tabs .MuiTab-root {
+  display: inline-block; /* Pozwala na układanie elementów w jednej linii */
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #e0e0e0;
+  padding: 10px 14px; /* Dostosuj odstępy */
+  cursor: pointer;
+}
+
+.tabs .MuiTab-root.Mui-selected {
+  color: #8baa36;
+}
+
+.tabs .MuiTab-root:hover {
+  color: #8baa36;
+}
+ 
+ 
+
+/* Dla przeglądarek opartych na WebKit (Chrome, Safari) */
+.tabsWrapper::-webkit-scrollbar {
+  width: 0;  /* Ukrywa pasek przewijania */
+  height: 0;
+}
+
+/* Dla Firefox */
+.tabsWrapper {
+  scrollbar-width: none; /* Ukrywa pasek przewijania */
+}
+
+/* Opcjonalnie: Dodanie stylów do paska przewijania na hover */
+.tabsWrapper:hover::-webkit-scrollbar {
+  width: 0;  /* Ukrywa pasek przewijania nawet na hover */
+  height: 0;
+}
+
+/* Opcjonalnie: Dodanie stylów na focus */
+.tabsWrapper:focus::-webkit-scrollbar {
+  width: 0;  /* Ukrywa pasek przewijania nawet na focus */
+  height: 0;
+} 
+ 
+.tabsWrapper {
+  -webkit-overflow-scrolling: touch; /* Płynne przewijanie na urządzeniach dotykowych */
+} 
+
+.tabsWrapper {
+  position: relative;
+}
+
+.tabsWrapper::before,
+.tabsWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.tabsWrapper::before {
+  left: 0;
+}
+
+.tabsWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
+}
