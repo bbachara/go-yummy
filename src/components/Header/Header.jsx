@@ -9,12 +9,14 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1440);
 
   const openMenu = () => setMenuOpen(true);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
     const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1440);
       if (window.innerWidth >= 1440 && isMenuOpen) {
         closeMenu();
       }
@@ -40,7 +42,7 @@ const Header = () => {
           <UserMenu user={user} />
           <MobMenuBurgerBtn openMenu={openMenu} />
           {isMenuOpen && <MobileNavMenu closeMenu={closeMenu} />}
-          <ThemeSwitcher />
+          {(isDesktop || isMenuOpen) && <ThemeSwitcher />}
         </div>
       </header>
     </div>
