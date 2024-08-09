@@ -84,13 +84,13 @@
 
 .categoriesPageSection {
 height: 100%;
-padding-top: 50px; /* Domyślnie odstęp 50px */
+padding-top: 50px; 
 padding-bottom: 100px;
 }
 
 @media screen and (min-width: 768px) {
 .categoriesPageSection {
-  padding-top: 50px; /* Odstęp 50px dla tabletów */
+  padding-top: 50px; 
   padding-bottom: 200px;
 } 
 .boxcategories{ 
@@ -100,7 +100,7 @@ padding-bottom: 100px;
 
 @media screen and (min-width: 1440px) {
 .categoriesPageSection {
-  padding-top: 50px; /* Odstęp 50px dla desktopów */
+  padding-top: 50px; 
 } 
 .boxcategories{ 
   margin-top: 50px;
@@ -109,7 +109,7 @@ padding-bottom: 100px;
 
 @media screen and (max-width: 767px) {
 .categoriesPageSection {
-  padding-top: 32px; /* Odstęp 32px dla mobilnych */
+  padding-top: 32px; 
 } 
 .boxcategories{ 
   margin-top: 32px;
@@ -196,7 +196,6 @@ flex-wrap: wrap;
 gap: 20px;
 }
 
-/* Domyślnie na mobile: 1 w rzędzie */
 .recipeItem {
 position: relative;
 border: 1px solid #ddd;
@@ -239,14 +238,14 @@ text-align: center;
 }
 
 
-/* Na tabletach: 2 w rzędzie */
+
 @media screen and (min-width: 768px) {
 .recipeItem {
   width: calc(50% - 20px);
 }
 }
 
-/* Na desktopach: 4 w rzędzie */
+
 @media screen and (min-width: 1200px) {
 .recipeItem {
   width: calc(25% - 20px);
@@ -255,20 +254,20 @@ text-align: center;
  
 .tabsWrapper {
   border-bottom: 1px solid #ddd;
-  overflow-x: auto; /* Pozwala na przewijanie w poziomie */
-  white-space: nowrap; /* Zapobiega zawijaniu się elementów */
+  overflow-x: auto; 
+  white-space: nowrap; 
 }
 
 .tabs {
-  display: inline-flex; /* Ustawia elementy w jednym rzędzie */
+  display: inline-flex; 
   padding: 0;
   margin: 0;
   list-style: none;
-  white-space: nowrap; /* Zapobiega zawijaniu się elementów */
+  white-space: nowrap; 
 }
 
 .tabs .MuiTab-root {
-  display: inline-block; /* Pozwala na układanie elementów w jednej linii */
+  display: inline-block; 
   text-align: center;
   text-transform: capitalize;
   font-family: 'Poppins', sans-serif;
@@ -276,7 +275,7 @@ text-align: center;
   font-size: 14px;
   line-height: 1;
   color: #e0e0e0;
-  padding: 10px 14px; /* Dostosuj odstępy */
+  padding: 10px 14px; 
   cursor: pointer;
 }
 
@@ -290,31 +289,30 @@ text-align: center;
  
  
 
-/* Dla przeglądarek opartych na WebKit (Chrome, Safari) */
 .tabsWrapper::-webkit-scrollbar {
-  width: 0;  /* Ukrywa pasek przewijania */
+  width: 0;  
   height: 0;
 }
 
-/* Dla Firefox */
+
 .tabsWrapper {
-  scrollbar-width: none; /* Ukrywa pasek przewijania */
+  scrollbar-width: none; 
 }
 
-/* Opcjonalnie: Dodanie stylów do paska przewijania na hover */
+
 .tabsWrapper:hover::-webkit-scrollbar {
-  width: 0;  /* Ukrywa pasek przewijania nawet na hover */
+  width: 0;  
   height: 0;
 }
 
-/* Opcjonalnie: Dodanie stylów na focus */
+
 .tabsWrapper:focus::-webkit-scrollbar {
-  width: 0;  /* Ukrywa pasek przewijania nawet na focus */
+  width: 0;  
   height: 0;
 } 
  
 .tabsWrapper {
-  -webkit-overflow-scrolling: touch; /* Płynne przewijanie na urządzeniach dotykowych */
+  -webkit-overflow-scrolling: touch; 
 } 
 
 .tabsWrapper {

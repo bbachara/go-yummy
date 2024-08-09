@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { fetchPopularCategories, fetchRecipesByCategory } from '../../api/homePageAPI'; 
 import styles from './Categories.module.css'; 
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YjE0YTkwZTEwNjA3YjQ3MGFmYjA5OSIsImVtYWlsIjoibWlrb2xhamJsYWpla0BnbWFpbC5jb20iLCJpYXQiOjE3MjMyMjYzMDIsImV4cCI6MTcyMzMzNDMwMn0.pyv0SUpeRc31UbPstzyC_32rbeaS8C1iH8vknG76Qyo'; // Wstaw swój rzeczywisty token
- 
-// const token = process.env.REACT_APP_API_TOKEN; 
-
 export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(false); // Dodanie stanu ładowania
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
+    // Pobieranie tokenu z localStorage
+    const token = localStorage.getItem('token');
+
     const getCategories = async () => {
       try {
         const data = await fetchPopularCategories(token);
@@ -22,26 +21,31 @@ export default function CategoriesPage() {
       }
     };
 
-    getCategories();
+    if (token) {
+      getCategories();
+    } else {
+      console.error('No token found in localStorage');
+    }
   }, []);
 
   const handleCategoryClick = async (category) => {
+    // Pobieranie tokenu z localStorage
+    const token = localStorage.getItem('token');
+
     setSelectedCategory(category);
-    setRecipes([]); // Wyczyszczenie poprzednich przepisów
-    setLoading(true); // Ustawienie stanu ładowania
+    setRecipes([]); 
+    setLoading(true); 
     try {
       const data = await fetchRecipesByCategory(category, token);
-      console.log('Data from backend:', data); // Logowanie odpowiedzi z backendu
-      setRecipes(data.recipe); // Ustawienie odpowiedniego stanu
+      console.log('Data from backend:', data); 
+      setRecipes(data.recipe); 
     } catch (error) {
       console.error(`Failed to fetch recipes for category ${category}:`, error);
     } finally {
-      setLoading(false); // Wyłączenie stanu ładowania
+      setLoading(false); 
     }
   };
   
-  
-
   return (
     <section className={styles.categoriesPageSection}>
       <div className={styles.container}>
@@ -65,7 +69,7 @@ export default function CategoriesPage() {
         </div>
         <div className={styles.boxcategories}>
           {loading ? (
-            <p>Loading recipes...</p> // Wyświetlanie komunikatu ładowania
+            <p>Loading recipes...</p> 
           ) : recipes.length > 0 ? (
             <ul className={styles.recipeList}>
               {recipes.map((recipe, index) => (
@@ -77,10 +81,9 @@ export default function CategoriesPage() {
               ))}
             </ul>
           ) : (
-            selectedCategory && <p>No recipes found for this category.</p> // Komunikat, jeśli nie ma przepisów
+            selectedCategory && <p>No recipes found for this category.</p> 
           )}
         </div>
-
       </div>
     </section>
   );

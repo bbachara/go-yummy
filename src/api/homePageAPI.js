@@ -10,7 +10,7 @@ export const fetchPopularCategories = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(response.data); // Logujemy pełną odpowiedź z API
+    console.log(response.data); 
     return response.data.data.categoy; // Zmieniamy na 'categoy', aby działało, ale logujemy, co dokładnie API zwraca
   } catch (error) {
     console.error('Failed to fetch popular categories:', error);
@@ -27,7 +27,7 @@ export const fetchRecipesByCategory = async (category, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    return response.data.data; // zwracamy listę potraw z danej kategorii
+    return response.data.data; 
   } catch (error) {
     console.error(`Failed to fetch recipes for category ${category}:`, error);
     throw error;
