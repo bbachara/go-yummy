@@ -11,7 +11,7 @@ import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './pages/NotFoundPage/NotFound';
 import css from './App.module.css';
 import CategoriesPage from './pages/CategoriesPage/Categories';
-// import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
+import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
 
 export const App = () => {
   return (
@@ -37,6 +37,16 @@ export const App = () => {
               <>
                 <Header />
                 <CategoriesPage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/favorites" // Dodano nową trasę
+            element={
+              <>
+                <Header />
+                <FavoriteRecipesPage />
                 <Footer />
               </>
             }
