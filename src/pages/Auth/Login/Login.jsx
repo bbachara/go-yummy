@@ -30,11 +30,21 @@ export const Login = () => {
 
     try {
       await schema.validateAsync({ email, password }, { abortEarly: false });
-      const response = await axios.post('https://goit-so-yummy-gr5-f200f807d84e.herokuapp.com/auth/login/', {
+      const response = await axios.post('https://goit-so-yummy-gr5-f200f807d84e.herokuapp.com/auth/login', {
         email,
         password,
       });
+
       console.log('Login successful:', response.data);
+      console.log('Full response:', response.data);
+      console.log('Saving userName to localStorage:', response.data.data.name);
+      localStorage.setItem('userName', response.data.data.name);
+      localStorage.setItem('token', response.data.data.token);
+      localStorage.setItem('refreshToken', response.data.data.refreshToken);
+      console.log('Saved userName:', localStorage.getItem('userName'));
+      console.log('Saved token:', localStorage.getItem('token'));
+      console.log('Saved refreshToken:', localStorage.getItem('refreshToken'));
+
       navigate('/homepage');
     } catch (error) {
       if (error.name === 'ValidationError') {

@@ -1,8 +1,8 @@
 import React from 'react';
 import css from './UserName.module.css';
 
-const UserName = () => {
-  return <span className={css.name}>Jan Kowalski</span>;
+const UserName = ({ name }) => {
+  return <span className={css.name}>{name}</span>;
 };
 
 export default UserName;
