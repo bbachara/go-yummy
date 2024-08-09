@@ -179,6 +179,10 @@
     .signInLink {
         margin-bottom: 59px;
     }
+
+    .backgroundImage {
+        height: calc(100vh - 418px);
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -236,4 +240,16 @@
     .signInLink {
         margin-bottom: 118px;
     }
+
+    .backgroundImage {
+        height: calc(100vh - 322px);
+    }
+}
+
+.input.valid {
+    border-color: #3CBC81;
+}
+
+.input.invalid {
+    border-color: #E74A3B;
 }
