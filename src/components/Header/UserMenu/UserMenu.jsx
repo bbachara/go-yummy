@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserMenuModalForm from './UserMenuModalForm/UserMenuModalForm';
 import EditUserForm from './EditUserForm/EditUserForm';
@@ -11,9 +11,17 @@ const UserMenu = () => {
   const [smallModalOpen, setSmallModalOpen] = useState(false);
   const [largeModalOpen, setLargeModalOpen] = useState(false);
   const [confirmModalOpen, setConfirmModalOpen] = useState(false);
+  const [userName, setUserName] = useState('');
 
   const userMenuContainerRef = useRef();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('userName');
+    if (storedUserName) {
+      setUserName(storedUserName);
+    }
+  }, []);
 
   const openSmallModal = () => {
     setSmallModalOpen(true);
@@ -43,7 +51,13 @@ const UserMenu = () => {
 
   const handleLogoutConfirm = () => {
     console.log('User logged out');
+    localStorage.removeItem('userName');
     navigate('/');
+  };
+
+  const handleUserNameUpdate = (name) => {
+    setUserName(name);
+    localStorage.setItem('userName', name); // Zaktualizuj nazwę użytkownika w localStorage
   };
 
   return (
@@ -54,7 +68,7 @@ const UserMenu = () => {
         onClick={openSmallModal}
       >
         <UserAvatar />
-        <UserName />
+        <UserName name={userName} />
       </div>
       {smallModalOpen && (
         <EditUserForm
@@ -64,7 +78,12 @@ const UserMenu = () => {
           container={userMenuContainerRef.current}
         />
       )}
-      {largeModalOpen && <UserMenuModalForm onClose={closeLargeModal} />}
+      {largeModalOpen && (
+        <UserMenuModalForm 
+          onClose={closeLargeModal} 
+          onUserNameUpdate={handleUserNameUpdate}
+        />
+      )}
       {confirmModalOpen && (
         <ConfirmModal
           onClose={closeConfirmModal}

@@ -3,7 +3,7 @@ import css from './UserMenuModalForm.module.css';
 import MobMenuCloseBtn from 'components/Header/MobileNavMenu/MobMenuCloseBtn/MobMenuCloseBtn';
 import { ReactComponent as PlusIcon } from 'components/Header/icons/plusIcon.svg';
 
-const UserMenuModalForm = ({ onClose }) => {
+const UserMenuModalForm = ({ onClose, onUserNameUpdate }) => {
   const userMenuInput = useRef(null);
   const [image, setImage] = useState(null);
   const [userName, setUserName] = useState('');
@@ -33,6 +33,7 @@ const UserMenuModalForm = ({ onClose }) => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log('User name:', userName, 'Selected image:', image);
+    onUserNameUpdate(userName); // Aktualizuje nazwę użytkownika w `UserMenu`
     onClose();
   };
 

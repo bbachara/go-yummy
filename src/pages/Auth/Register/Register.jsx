@@ -44,7 +44,12 @@ export const Register = () => {
 
     try {
       const response = await axios.post('https://goit-so-yummy-gr5-f200f807d84e.herokuapp.com/auth/register', userData);
-      console.log('Response:', response.data);
+
+      console.log('Full response:', response.data);
+      console.log('Saving userName to localStorage:', response.data.data.name);
+      localStorage.setItem('userName', response.data.data.name);
+      console.log('Saved userName:', localStorage.getItem('userName'));
+
       navigate('/signin');
     } catch (error) {
       console.error('Error registering user:', error);
