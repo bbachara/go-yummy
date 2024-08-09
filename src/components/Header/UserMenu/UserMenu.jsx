@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserMenuModalForm from './UserMenuModalForm/UserMenuModalForm';
 import EditUserForm from './EditUserForm/EditUserForm';
 import UserAvatar from './UserAvatar/UserAvatar';
@@ -12,6 +13,7 @@ const UserMenu = () => {
   const [confirmModalOpen, setConfirmModalOpen] = useState(false);
 
   const userMenuContainerRef = useRef();
+  const navigate = useNavigate();
 
   const openSmallModal = () => {
     setSmallModalOpen(true);
@@ -41,6 +43,7 @@ const UserMenu = () => {
 
   const handleLogoutConfirm = () => {
     console.log('User logged out');
+    navigate('/');
   };
 
   return (
