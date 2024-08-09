@@ -51,13 +51,17 @@ const UserMenu = () => {
 
   const handleLogoutConfirm = () => {
     console.log('User logged out');
+
     localStorage.removeItem('userName');
+    localStorage.removeItem('token');
+    localStorage.removeItem('refreshToken');
+    
     navigate('/');
   };
 
   const handleUserNameUpdate = (name) => {
     setUserName(name);
-    localStorage.setItem('userName', name); // Zaktualizuj nazwę użytkownika w localStorage
+    localStorage.setItem('userName', name);
   };
 
   return (
