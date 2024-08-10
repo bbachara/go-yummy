@@ -1,0 +1,24 @@
+/* @media (min-width: 1440px) {
+  .background {
+    z-index: -10;
+    position: absolute;
+  }
+  .spinachTopRightDesktop {
+    position: absolute;
+    z-index: -7;
+  }
+  .bgDesktop {
+    height: 700px;
+    width: 900px;
+    z-index: -88;
+    position: absolute;
+    bottom: 3400px;
+    left: 750px;
+  }
+
+  .spinachTopLeftDesktop {
+    height: 200px;
+    z-index: -1;
+    position: absolute;
+  }
+} */

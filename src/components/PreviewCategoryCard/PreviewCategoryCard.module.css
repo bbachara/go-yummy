@@ -1,17 +1,44 @@
 @media (min-width: 320px) and (max-width: 767px) {
-  .popularCategoryUl {
+  .previewCategories {
+    max-width: 343px;
+    margin-top: 64px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .previewCategoriesOtherCategories {
+    width: 195px;
+    height: 46px;
+    margin: 40px auto 100px;
+    border: 2px solid #8baa36;
+    color: #22252a;
+    border-radius: 24px 44px;
+    background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .previewCategoriesDiv {
+    margin: 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .popularCategoryUl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 343px;
+  }
   .popularCategoryLi {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
   }
   .popularCategoryHeader {
-    width: 100%;
+    width: 343px;
   }
   .popularCategoryHeading {
     font-family: Poppins;
@@ -22,6 +49,7 @@
     margin: 0 0 32px 0;
     text-align: left;
     color: #001833;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .popularRecipeUl {
     width: 343px;
@@ -43,14 +71,41 @@
     margin-top: 24px;
     margin-left: auto;
     align-self: flex-end;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
+  .previewCategories {
+    max-width: 704px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .previewCategoriesOtherCategories {
+    width: 239px;
+    height: 61px;
+    margin: 32px auto 100px;
+    border: 2px solid #8baa36;
+    color: #22252a;
+    border-radius: 24px 44px;
+    background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .previewCategoriesDiv {
+    margin: 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
   .popularCategoryUl {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 704px;
   }
   .popularCategoryLi {
     display: flex;
@@ -70,10 +125,13 @@
     margin: 0 0 40px 0;
     text-align: left;
     color: #001833;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .popularRecipeUl {
     width: 704px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
   }
   .seeAll {
     width: 94px;
@@ -90,14 +148,43 @@
     margin-left: auto;
     align-self: flex-end;
     margin-top: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 @media (min-width: 1440px) {
+  .previewCategories {
+    max-width: 1440px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .previewCategoriesOtherCategories {
+    width: 239px;
+    height: 61px;
+    margin: 102px auto 118px;
+    border: 2px solid #8baa36;
+    color: #22252a;
+    border-radius: 24px 44px;
+    background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .previewCategoriesDiv {
+    margin: 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
   .popularCategoryUl {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .popularCategoryLi {
     display: flex;
@@ -120,7 +207,9 @@
   }
   .popularRecipeUl {
     width: 1240px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
   }
   .seeAll {
     width: 94px;
@@ -137,6 +226,7 @@
     margin-left: auto;
     align-self: flex-end;
     margin-top: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -147,5 +237,10 @@
   }
   .seeAll:hover {
     background-color: #22252a;
+  }
+
+  .previewCategoriesOtherCategories:hover {
+    color: #fafafa;
+    background-color: #8baa36;
   }
 }

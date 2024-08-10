@@ -54,7 +54,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className={css.searchDiv}>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className={css.searchForm}>
           <label className={css.searchLabel}>Search phrase</label>
           <input
             className={css.searchInput}
