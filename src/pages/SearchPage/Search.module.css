@@ -1,0 +1,127 @@
+.searchPage {
+    width: 100%;
+    margin-left: auto;
+    padding-left: 16px;
+
+    @media (min-width: 768px) {
+        margin: 0 auto;
+        padding-left: 32px;
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    color: #001833;
+
+    @media (min-width: 768px) {
+        padding-top: 72px;
+        font-size: 32px;
+        line-height: 32px;
+        padding-bottom: 40px;
+    }
+    
+    @media (min-width: 1440px) {
+        padding-top: 104px;
+        padding-bottom: 50px;
+        font-size: 44px;
+        line-height: 44px;
+    }
+}
+
+.searchBarContainer {
+    position: relative;
+    width: 295px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        width: 362px;
+    }
+        
+    @media (min-width: 1440px) {
+        width: 510px;
+    }
+}
+
+.searchBar {
+    width: 100%;
+    height: 53px;
+    font-size: 16px;
+    padding: 0 32px;
+    border: 1px solid #f0f0f0;
+    border-radius: 24px 44px;
+    background-color: #ffff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 24px;
+    text-align: left;
+
+    @media (min-width: 768px) {
+        height: 57px;
+    }
+        
+    @media (min-width: 1440px) {
+        height: 70px;
+    }
+}
+
+.searchButton {
+    width: 113px;
+    height: 53px;
+    background-color: #8BAA36;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 24px 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        height: 57px;
+        width: 161px;
+    }
+        
+    @media (min-width: 1440px) {
+        height: 70px;
+    }
+}
+
+/* Stylizacja komunikatów o błędach */
+.error {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Stylizacja kontenera wyników wyszukiwania */
+.results {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Stylizacja kart wyników wyszukiwania */
+.resultCard {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}

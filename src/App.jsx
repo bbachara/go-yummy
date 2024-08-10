@@ -12,6 +12,7 @@ import { NotFound } from './pages/NotFoundPage/NotFound';
 import css from './App.module.css';
 import CategoriesPage from './pages/CategoriesPage/Categories';
 // import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
+import SearchPage from './pages/SearchPage/Search';
 
 export const App = () => {
   return (
@@ -47,6 +48,16 @@ export const App = () => {
               <>
                 <Header />
                 {/* <FavoriteRecipesPage /> */}
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <>
+                <Header />
+                <SearchPage />
                 <Footer />
               </>
             }
