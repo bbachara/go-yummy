@@ -1,4 +1,4 @@
-       import axios from 'axios';
+import axios from 'axios';
 
 const BASE_URL = 'https://goit-so-yummy-gr5-f200f807d84e.herokuapp.com/';
 
@@ -30,6 +30,36 @@ export const fetchRecipesByCategory = async (category, token) => {
     return response.data.data; 
   } catch (error) {
     console.error(`Failed to fetch recipes for category ${category}:`, error);
+    throw error;
+  }
+};
+ 
+
+//-------------------------------------Shoppinglist poniżej--------// 
+
+export const fetchShoppingList = async (token) => {
+  try {
+    const response = await axios.get(`${BASE_URL}shopping-list`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch shopping list:', error);
+    throw error;
+  }
+};
+
+export const removeItem = async (itemId, token) => {
+  try {
+    await axios.delete(`${BASE_URL}shopping-list/${itemId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    console.error('Failed to remove item:', error);
     throw error;
   }
 };
