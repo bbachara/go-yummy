@@ -1,4 +1,4 @@
-import { StyledTitle } from "./ManePageTitle.styled";
+import { StyledTitle } from "./MainPageTitle.styled";
 import PropTypes from 'prop-types';
 
 export const MainPageTitle = ({ title, isLink = false }) => {

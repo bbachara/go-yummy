@@ -1,5 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
-import { SeeRecipeBtn } from "components/Buttons/SeeRecipeBtn/SeeRecipeBtn";
+import { Link, useLocation } from 'react-router-dom';
 
 import {
   Card,
@@ -14,7 +13,7 @@ import {
   WrapperImgBtnRecipe,
   WrapperTextRecipe,
   TrashLogo,
-} from "./CardFavorite.styled.js";
+} from './CardFavorite.styled.js';
 
 export default function CardFavorite({ item, handleDelete }) {
   const { title, time, instructions, thumb, _id } = item;

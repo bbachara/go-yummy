@@ -1,6 +1,4 @@
-import styled from "styled-components";
-import { mediaQueries } from "style/mediaQueries";
-import { FiTrash2 } from "react-icons/fi";
+import styled from 'styled-components';
 
 export const Card = styled.div`
   width: 343px;
@@ -11,13 +9,13 @@ export const Card = styled.div`
   padding: 14px;
   margin-bottom: 18px;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     width: 704px;
     height: 288px;
     padding: 28px 24px;
     margin-bottom: 40px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     width: 1240px;
     height: 404px;
     padding: 40px;
@@ -25,28 +23,28 @@ export const Card = styled.div`
   `}
 `;
 export const WrapperContent = styled.div`
-  ${mediaQueries("mobile")`
+  ${mediaQueries('mobile')`
   width: 100%;
   padding-left: 14px;
 `}
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     padding-left: 24px;
     position: relative;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     padding-left: 40px;
     position: relative;
   `}
 `;
 export const ImgWrapper = styled.div`
-  ${mediaQueries("mobile")`
+  ${mediaQueries('mobile')`
     width: 211px;
    `}
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
         width: 356px;
    `}
-    ${mediaQueries("desktop")`
+    ${mediaQueries('desktop')`
    
    width: 444px;
  `}
@@ -55,10 +53,10 @@ export const ImgWrapper = styled.div`
 export const ImgRecipe = styled.img`
   border-radius: 8px;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
    height: 232px
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
    
     height: 324px;
   `}
@@ -74,12 +72,12 @@ export const TitleNameRecipe = styled.h3`
   color: ${({ theme: { colors } }) => colors.subtitle};
   height: 28px;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     font-size: 24px;
     line-height: 24px;
     margin-bottom: 28px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     margin-bottom: 50px;
   `}
 `;
@@ -87,11 +85,11 @@ export const WrapperTextRecipe = styled.div`
   height: 42px;
   margin-bottom: 28px;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     height: 73px;
     margin-bottom: 58px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     height: 134px;
     margin-bottom: 62px;
   `}
@@ -111,14 +109,14 @@ export const TextRecipe = styled.p`
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     font-size: 14px;
     line-height: 18px;
     /* margin-bottom: 58px;
     height: 73px; */
     width: 298px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     font-size: 18px;
     line-height: 24px;
     -webkit-line-clamp: 6;
@@ -134,7 +132,7 @@ export const WrapperImgTrashLogo = styled.div`
   padding: 5px;
   cursor: pointer;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     position: absolute;
     width: 38px;
     height: 38px;
@@ -142,7 +140,7 @@ export const WrapperImgTrashLogo = styled.div`
     top: 0px;
     padding: 8px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     position: absolute;
     width: 44px;
     height: 44px;
@@ -157,11 +155,11 @@ export const TrashLogo = styled(FiTrash2)`
   height: 14px;
   stroke: 22252A;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     width: 22px;
     height: 22px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     width: 22px;
     height: 22px;
   `}
@@ -182,7 +180,7 @@ export const TimeP = styled.p`
   letter-spacing: -0.24px;
   color: ${({ theme: { colors } }) => colors.subtitle};
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     font-size: 14px;
     line-height: 20px;
   `}
@@ -191,12 +189,12 @@ export const TimeP = styled.p`
 export const WrapperImgBtnRecipe = styled.div`
   display: none;
 
-  ${mediaQueries("tablet")`
+  ${mediaQueries('tablet')`
     display: block;
     width: 138px;
     height: 45px;
   `}
-  ${mediaQueries("desktop")`
+  ${mediaQueries('desktop')`
     width: 160px;
     height: 54px;
   `}

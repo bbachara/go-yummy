@@ -36,3 +36,33 @@ export const fetchRecipesByCategory = async (category, token) => {
     throw error;
   }
 };
+ 
+
+//-------------------------------------Shoppinglist poniżej--------// 
+
+export const fetchShoppingList = async (token) => {
+  try {
+    const response = await axios.get(`${BASE_URL}shopping-list`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch shopping list:', error);
+    throw error;
+  }
+};
+
+export const removeItem = async (itemId, token) => {
+  try {
+    await axios.delete(`${BASE_URL}shopping-list/${itemId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    console.error('Failed to remove item:', error);
+    throw error;
+  }
+};
