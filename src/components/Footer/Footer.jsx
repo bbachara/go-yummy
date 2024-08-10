@@ -17,6 +17,14 @@ import { SubscribeForm } from './SubscribeForm/SubscribeForm';
 import { SocialLinks } from './SocialLinks/SocialLinks';
 import { FooterDown } from './FooterCopyright';
 
+const routes = {
+  INGREDIENTS_PAGE: '/categories',
+  ADD_RECIPE_PAGE: '/add-recipe',
+  MY_RECIPES_PAGE: '/my-recipes',
+  FAVORITE_PAGE: '/favorites',
+  SHOPPING_LIST_PAGE: '/shopping-list',
+};
+
 export const Footer = () => {
   return (
     <FooterContainer>
@@ -36,19 +44,27 @@ export const Footer = () => {
               <FooterNav>
                 <FooterNavList>
                   <li>
-                    <LinkFooter to="/ingredients">Ingredients</LinkFooter>
+                    <LinkFooter to={routes.INGREDIENTS_PAGE}>
+                      Ingredients
+                    </LinkFooter>
                   </li>
                   <li>
-                    <LinkFooter to="/add-recipes">Add recipes</LinkFooter>
+                    <LinkFooter to={routes.ADD_RECIPE_PAGE}>
+                      Add recipes
+                    </LinkFooter>
                   </li>
                   <li>
-                    <LinkFooter to="/my-recipes">My recipes</LinkFooter>
+                    <LinkFooter to={routes.MY_RECIPES_PAGE}>
+                      My recipes
+                    </LinkFooter>
                   </li>
                   <li>
-                    <LinkFooter to="/favorite">Favorite</LinkFooter>
+                    <LinkFooter to={routes.FAVORITE_PAGE}>Favorite</LinkFooter>
                   </li>
                   <li>
-                    <LinkFooter to="/shopping-list">Shopping list</LinkFooter>
+                    <LinkFooter to={routes.SHOPPING_LIST_PAGE}>
+                      Shopping list
+                    </LinkFooter>
                   </li>
                 </FooterNavList>
               </FooterNav>
