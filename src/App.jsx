@@ -14,6 +14,7 @@ import CategoriesPage from './pages/CategoriesPage/Categories';
 // import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
 import SearchPage from './pages/SearchPage/Search'; 
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingList';
+import AddRecipes from './pages/AddRecipesPage/AddRecipes'
 
 export const App = () => {
   return (
@@ -39,6 +40,16 @@ export const App = () => {
               <>
                 <Header />
                 <CategoriesPage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/add-recipes"
+            element={
+              <>
+                <Header />
+                <AddRecipes />
                 <Footer />
               </>
             }
