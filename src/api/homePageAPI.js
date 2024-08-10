@@ -36,11 +36,10 @@ export const fetchRecipesByCategory = async (category, token) => {
     throw error;
   }
 };
- 
 
-//-------------------------------------Shoppinglist poniżej--------// 
+//-------------------------------------Shoppinglist poniżej--------//
 
-export const fetchShoppingList = async (token) => {
+export const fetchShoppingList = async token => {
   try {
     const response = await axios.get(`${BASE_URL}shopping-list`, {
       headers: {
@@ -66,3 +65,31 @@ export const removeItem = async (itemId, token) => {
     throw error;
   }
 };
+
+//----------------------- Search by text --------------
+
+export async function fetchRecipesByText(q, token) {
+  try {
+    const endUrl = 'recipes/search';
+    const searchParams = new URLSearchParams({ q });
+    const response = await axios.get(`${BASE_URL}${endUrl}?${searchParams}`, {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    // console.log('Recipes found by text:', response.data);
+    return response.data;
+  } catch (error) {
+    // if (error.response) {
+    //   console.error('Server Error:', error.response.data);
+    //   console.error('Status:', error.response.status);
+    //   console.error('Headers:', error.response.headers);
+    // } else if (error.request) {
+    //   console.error('No response received:', error.request);
+    // } else {
+    //   console.error('Error setting up request:', error.message);
+    // }
+    throw error;
+  }
+}
