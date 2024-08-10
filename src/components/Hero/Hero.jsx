@@ -16,7 +16,7 @@ export const Hero = () => {
       setSearch('');
       return;
     }
-    navigate(`/search?query=${search}&type=ingredients`);
+    navigate(`/search?query=${search}`);
     setSearch('');
   };
 
@@ -59,7 +59,7 @@ export const Hero = () => {
           <input
             className={css.searchInput}
             type="text"
-            placeholder="What would you like to make?"
+            placeholder="Search..."
             value={search}
             onChange={handleSearch}
           ></input>

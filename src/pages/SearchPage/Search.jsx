@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './Search.module.css';
+import { fetchRecipesByText } from 'api/homePageAPI';
+import Notiflix from 'notiflix';
+import { useLocation } from 'react-router-dom';
 
 const SearchPage = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
+  const location = useLocation();
 
-  const API = 'https://api.example.com/search'; // Zaktualizuj adres API !!!!!!!!!!!!
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const searchQuery = params.get('query') || '';
+    if (searchQuery) {
+      setQuery(searchQuery);
+      handleSearch(searchQuery);
+    }
+  }, [location.search]);
 
-  const handleSearch = async () => {
+  const handleSearch = async searchQuery => {
+    if (searchQuery.trim() === '') {
+      Notiflix.Notify.warning('Please enter a search term!');
+      return;
+    }
+    // console.log('Query is:', searchQuery);
     try {
-      const response = await fetch(`${API}?query=${encodeURIComponent(query)}`);
-      const data = await response.json();
+      const token = localStorage.getItem('token');
+      const data = await fetchRecipesByText(searchQuery, token);
+      setResults(data || []);
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Network response was not ok');
-      }
-
-      setResults(data.results || []);
-      if (data.results.length === 0) {
+      if (data.length === 0) {
         setError('No results found');
       } else {
         setError(null);
@@ -37,10 +49,15 @@ const SearchPage = () => {
           type="text"
           className={css.searchBar}
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={e => setQuery(e.target.value)}
           placeholder="Search..."
         />
-        <button onClick={handleSearch} className={css.searchButton}>Search</button>
+        <button
+          onClick={() => handleSearch(query)}
+          className={css.searchButton}
+        >
+          Search
+        </button>
       </div>
       {error && <p className={css.error}>{error}</p>}
       <div className={css.results}>
