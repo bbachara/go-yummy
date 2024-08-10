@@ -46,6 +46,7 @@
     font-weight: 600;
     line-height: 28px;
     letter-spacing: -0.02em;
+    text-decoration: none;
     margin: 0 0 32px 0;
     text-align: left;
     color: #001833;
@@ -119,6 +120,7 @@
   .popularCategoryHeading {
     font-family: Poppins;
     font-size: 44px;
+    text-decoration: none;
     font-weight: 600;
     line-height: 44px;
     letter-spacing: -0.02em;
@@ -200,6 +202,7 @@
     font-size: 44px;
     font-weight: 600;
     line-height: 44px;
+    text-decoration: none;
     letter-spacing: -0.02em;
     margin: 0 0 50px 0;
     text-align: left;
@@ -242,5 +245,9 @@
   .previewCategoriesOtherCategories:hover {
     color: #fafafa;
     background-color: #8baa36;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

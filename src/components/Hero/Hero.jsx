@@ -48,7 +48,7 @@ export const Hero = () => {
             <span className={css.accent}>Delicious and healthy</span> way to
             enjoy a variety of fresh ingredients in one satisfying meal
           </p>
-          <Link to="/recipes/categories/Breakfast">
+          <Link to="/categories/">
             <button className={css.seeRecipesButton}>See recipes</button>
           </Link>
         </div>

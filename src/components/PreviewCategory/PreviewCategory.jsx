@@ -5,12 +5,15 @@ import {
 import css from '../PreviewCategoryCard/PreviewCategoryCard.module.css';
 import { useState, useEffect, useMemo } from 'react';
 import { PreviewRecipeCard } from '../PreviewRecipeCard/PreviewRecipeCard';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const PreviewCategory = () => {
   const [categories, setCategories] = useState([]);
   const [recipes, setRecipes] = useState({});
   const currentToken = localStorage.getItem('token');
   const [recipesToShow, setRecipesToShow] = useState(4);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getCategories = async () => {
@@ -70,6 +73,10 @@ export const PreviewCategory = () => {
     return () => window.removeEventListener('resize', updateRecipesToShow);
   }, []);
 
+  const GoToRecipeClick = recipeId => {
+    navigate(`/recipes/${recipeId}`);
+  };
+
   // console.log('Categories:', categories);
   // console.log('Popular Categories:', popularCategories);
   // console.log('Recipes', recipes);
@@ -80,35 +87,38 @@ export const PreviewCategory = () => {
         <ul className={css.popularCategoryUl} key={popularCategory._id}>
           <li className={css.popularCategoryLi}>
             <div className={css.popularCategoryHeader}>
-              <h3 className={css.popularCategoryHeading}>{popularCategory}</h3>
+              <Link to="/categories/">
+                <h3 className={css.popularCategoryHeading}>
+                  {popularCategory}
+                </h3>
+              </Link>
             </div>
             <ul className={css.popularRecipeUl}>
               {recipes[popularCategory] &&
                 Object.values(recipes[popularCategory])
                   .slice(0, recipesToShow)
                   .map(recipe => (
-                    <PreviewRecipeCard
-                      className={css.popularRecipeLi}
-                      key={recipe._id}
-                      recipe={recipe}
-                    />
+                    <Link to="/recipes/">
+                      <PreviewRecipeCard
+                        className={css.popularRecipeLi}
+                        key={recipe._id}
+                        recipe={recipe}
+                        onClick={GoToRecipeClick}
+                      />
+                    </Link>
                   ))}
             </ul>
-            <button
-              className={css.seeAll}
-              // onClick={SeeAllClick}
-            >
-              See all
-            </button>
+            <Link to="/categories/">
+              <button className={css.seeAll}>See all</button>
+            </Link>
           </li>
         </ul>
       ))}
-      <button
-        className={css.previewCategoriesOtherCategories}
-        // onClick={otherCategoriesClick}
-      >
-        Other categories
-      </button>
+      <Link to="/categories/">
+        <button className={css.previewCategoriesOtherCategories}>
+          Other categories
+        </button>
+      </Link>
     </div>
   );
 };
