@@ -1,0 +1,179 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    color: #1c2b42;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Form and Form Elements */
+.formContainer {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.imageUpload {
+    flex: 1;
+}
+
+.imageBox {
+    width: 100%;
+    height: 300px;
+    background-color: #a3c649;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.uploadIcon {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+.form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+    .form {
+        margin-bottom: 72px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .form {
+        margin-bottom: 100px;
+    }
+}
+
+/* Input Group */
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputGroup label {
+    font-weight: bold;
+    color: #1c2b42;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Ingredients Section */
+.ingredientsSection {
+    margin-top: 20px;
+}
+
+.ingredientsSection h3 {
+    color: #1c2b42;
+}
+
+.ingredientRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ingredientRow input,
+.ingredientRow select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.addIngredientBtn {
+    background-color: #a3c649;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Add Button */
+.addButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 129px;
+    height: 46px;
+    background-color: #a3c649;
+    /* lub ${p => p.theme.colors.recipeBlockBtnBg}; */
+    color: #ffffff;
+    /* lub ${p => p.theme.colors.btnTextLight}; */
+    font-size: 16px;
+    line-height: 1.5;
+    /* lub ${p => p.theme.lineHeights.searchSelect}; */
+    padding: 12px 48px;
+    border: none;
+    border-radius: 80px 80px 80px 80px;
+    /* To odpowiada border-top-left-radius: 30px; itd. */
+    transition: background-color 0.3s ease;
+    /* lub ${p => p.theme.transitions.main}; */
+
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
+        color: #ffffff;
+        /* lub ${p => p.theme.colors.addBtnHoverText}; */
+        background-color: #9cbd4f;
+        /* lub ${p => p.theme.colors.addBtnHoverBg}; */
+    }
+
+    &[disabled] {
+        opacity: 0.7;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 161px;
+        height: 52px;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.followUs h3,
+.popularRecipes h3 {
+    color: #1c2b42;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.popularRecipes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
