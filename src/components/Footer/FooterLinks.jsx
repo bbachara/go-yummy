@@ -1,9 +1,8 @@
 import React from 'react';
 import { FooterNav, FooterNavList, LinkFooter } from './Footer.styled';
 
-// Definiowanie tras bezpośrednio w pliku
 const routes = {
-  SEARCH_PAGE: '/search',
+  INGREDIENTS_PAGE: '/ingredients',
   ADD_RECIPE_PAGE: '/add-recipe',
   MY_RECIPES_PAGE: '/my-recipes',
   FAVORITE_PAGE: '/favorite',
@@ -15,9 +14,7 @@ export const FooterLinks = () => {
     <FooterNav>
       <FooterNavList>
         <li>
-          <LinkFooter to={`${routes.SEARCH_PAGE}?type=ingredient`}>
-            Ingredients
-          </LinkFooter>
+          <LinkFooter to={routes.INGREDIENTS_PAGE}>Ingredients</LinkFooter>
         </li>
         <li>
           <LinkFooter to={routes.ADD_RECIPE_PAGE}>Add recipes</LinkFooter>
