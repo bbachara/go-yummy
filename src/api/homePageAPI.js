@@ -10,8 +10,8 @@ export const fetchPopularCategories = async token => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log('Categories in API:', response.data.data);
-    return response.data.data.categoy; // Zmieniamy na 'categoy', aby działało, ale logujemy, co dokładnie API zwraca
+  
+    return response.data.data.categoy; 
   } catch (error) {
     console.error('Failed to fetch popular categories:', error);
     throw error;
@@ -29,7 +29,7 @@ export const fetchRecipesByCategory = async (category, token) => {
         },
       }
     );
-    // console.log(`Recipes for ${category}:`, response.data.data);
+ 
     return response.data.data;
   } catch (error) {
     console.error(`Failed to fetch recipes for category ${category}:`, error);
@@ -37,7 +37,7 @@ export const fetchRecipesByCategory = async (category, token) => {
   }
 };
 
-//-------------------------------------Shoppinglist poniżej--------//
+//-------------------------------------Shoppinglist--------//
 
 export const fetchShoppingList = async token => {
   try {
@@ -64,7 +64,24 @@ export const removeItem = async (itemId, token) => {
     console.error('Failed to remove item:', error);
     throw error;
   }
-};
+}; 
+
+export const fetchIngredientById = async (id, token) => {
+  try {
+      const response = await axios.get(`${BASE_URL}ingredients/${id}`, {
+          headers: {
+              Authorization: `Bearer ${token}`,
+          },
+      });
+      return response.data.data; 
+  } catch (error) {
+      console.error('Failed to fetch ingredient:', error);
+      throw error;
+  } 
+}; 
+
+
+
 
 //----------------------- Search by text --------------
 
