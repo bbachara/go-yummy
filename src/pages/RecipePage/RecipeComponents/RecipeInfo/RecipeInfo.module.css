@@ -7,7 +7,7 @@ import bg_desktop_2 from '../../../assets/RecipePage/assortment-vegetables-deskt
 
 .recipeInfo {
   /* background-image: url(${bg_mobile_1}); */
-  background-image: url('../../../assets/RecipePage/assortment-vegetables-mobile.png');
+  background-image: url('../../../../assets/RecipePage/assortment-vegetables-mobile.png');
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -21,7 +21,7 @@ import bg_desktop_2 from '../../../assets/RecipePage/assortment-vegetables-deskt
   screen and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx) {
   .recipeInfo {
-    background-image: url('../../../assets/RecipePage/assortment-vegetables-mobile@x2.png');
+    background-image: url('../../../../assets/RecipePage/assortment-vegetables-mobile@x2.png');
   }
 }
 
@@ -29,13 +29,13 @@ import bg_desktop_2 from '../../../assets/RecipePage/assortment-vegetables-deskt
   .recipeInfo {
     height: 495px;
     -webkit-background-size: 100%;
-    background-image: url('../../../assets/RecipePage/assortment-vegetables-tablet.png');
+    background-image: url('../../../../assets/RecipePage/assortment-vegetables-tablet.png');
   }
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     .recipeInfo {
-      background-image: url('../../../assets/RecipePage/assortment-vegetables-tablet@x2.png');
+      background-image: url('../../../../assets/RecipePage/assortment-vegetables-tablet@x2.png');
     }
   }
 }
@@ -45,13 +45,13 @@ import bg_desktop_2 from '../../../assets/RecipePage/assortment-vegetables-deskt
     height: 493px;
     background-size: 100%;
     background-position-y: 20%;
-    background-image: url('../../../assets/RecipePage/assortment-vegetables-desktop.png');
+    background-image: url('../../../../assets/RecipePage/assortment-vegetables-desktop.png');
   }
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     .recipeInfo {
-      background-image: url('../../../assets/RecipePage/assortment-vegetables-desktop@x2.png');
+      background-image: url('../../../../assets/RecipePage/assortment-vegetables-desktop@x2.png');
     }
   }
 }

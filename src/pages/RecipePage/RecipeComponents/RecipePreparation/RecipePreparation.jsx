@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import notFoundImage from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
+import notFoundImage from '../../../../assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
+import css from './RecipePreparation.module.css';
 
-export const RecipePreparation = ({ recipe }) => {
+const RecipePreparation = ({ recipe }) => {
   const { title, instructions, thumb } = recipe;
   const instructionsArray = instructions
     .split('\r\n')
@@ -20,12 +20,10 @@ export const RecipePreparation = ({ recipe }) => {
             ))}
           </ol>
         </div>
-        <img
-          src={thumb || notFoundImage.default}
-          alt={title}
-          className={css.image}
-        />
+        <img src={thumb || notFoundImage} alt={title} className={css.image} />
       </div>
     </section>
   );
 };
+
+export default RecipePreparation;

@@ -31,16 +31,6 @@ export default function CardFavorite({ item, handleDelete }) {
         <WrapperTextRecipe>
           <TextRecipe>{instructions}</TextRecipe>
         </WrapperTextRecipe>
-
-        <WrapperTimeBtn>
-          <TimeP>{time} min</TimeP>
-          <WrapperImgBtnRecipe>
-            <SeeRecipeBtn to={`/recipe/${_id}`} state={{ from: location }} />
-          </WrapperImgBtnRecipe>
-          <WrapperImgTrashLogo onClick={() => handleDelete(_id)}>
-            <TrashLogo />
-          </WrapperImgTrashLogo>
-        </WrapperTimeBtn>
       </WrapperContent>
     </Card>
   );

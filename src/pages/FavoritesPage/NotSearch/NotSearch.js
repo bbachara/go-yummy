@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import {
   ContainerFavorite,
   WrapperNotSearch,
   NotSearchText,
   ImgNotSearch,
-} from "./NoSearch.styled";
-import notSearchPng from "./img/basket.png";
+} from './NoSearch.styled';
+import notSearchPng from './img/basket.png';
 
 export const NotSearch = () => {
   return (
