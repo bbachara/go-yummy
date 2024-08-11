@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import css from './MobileNavMenu.module.css';
 import MobMenuCloseBtn from './MobMenuCloseBtn/MobMenuCloseBtn';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../assets/SVG/Logo/logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
