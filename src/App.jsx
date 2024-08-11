@@ -44,7 +44,7 @@ export const App = () => {
             }
           />
           <Route
-            path="/favorites" // Dodano nową trasę
+            path="/favorites"
             element={
               <>
                 <Header />
@@ -62,9 +62,9 @@ export const App = () => {
                 <Footer />
               </>
             }
-          /> 
+          />
           <Route
-            path="/" 
+            path="/shopping-list" 
             element={
               <>
                 <Header />
