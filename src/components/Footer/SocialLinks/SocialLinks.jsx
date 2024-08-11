@@ -5,7 +5,7 @@ import {
   Twitter,
   Instagram,
   Link,
-} from "./SocialLinks.styled";
+} from './SocialLinks.styled';
 
 export const SocialLinks = () => {
   return (
