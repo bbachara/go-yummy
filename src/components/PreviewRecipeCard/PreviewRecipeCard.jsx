@@ -1,8 +1,8 @@
 import css from './PreviewRecipeCard.module.css';
 
-export const PreviewRecipeCard = ({ onClick, recipe }) => {
+export const PreviewRecipeCard = ({ recipe }) => {
   return (
-    <li className={css.popularRecipeLi} onClick={onClick}>
+    <li className={css.popularRecipeLi}>
       <img
         className={css.popularRecipeImg}
         alt={recipe.title}
