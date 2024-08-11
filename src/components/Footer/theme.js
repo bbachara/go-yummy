@@ -62,6 +62,15 @@ export const theme = {
     },
   },
 
+  // Dodajemy brakujące właściwości
+  text: {
+    title: '#23262A', // Możesz dostosować kolor według potrzeby
+  },
+
+  hover: {
+    transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1)', // Możesz dostosować przejście według potrzeby
+  },
+
   transitions: {
     create: createTransitions,
     duration: '250ms',
