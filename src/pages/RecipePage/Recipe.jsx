@@ -9,18 +9,20 @@ import notFoundImage from '../../assets/NotFoundPage/404-page-not-found-with-peo
 import css from './Recipe.module.css';
 
 const Recipe = () => {
-  const { recipeId } = useParams();
-
+  const { id } = useParams();
+ 
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  console.log(id)
   useEffect(() => {
     const fetchRecipe = async () => {
       setIsLoading(true);
-      try {
-        const data = await getRecipeById(recipeId); // Popraw to na wywołanie API
-        setRecipe(data); // Ustaw wynik na `recipe`
+      try { const token = localStorage.getItem('token');
+        const response = await getRecipeById(token, id); // Popraw to na wywołanie API
+        console.log('Resonse for:',response)
+        setRecipe(response); // Ustaw wynik na `recipe`
       } catch (error) {
         setError(error);
       } finally {
@@ -29,7 +31,7 @@ const Recipe = () => {
     };
 
     fetchRecipe();
-  }, [recipeId]);
+  }, [id]);
 
   if (isLoading) return <Loader />;
 
@@ -50,7 +52,7 @@ const Recipe = () => {
         description={recipe.description}
         time={recipe.time}
       />
-      <RecipeIngredients ingredients={recipe.ingredients} recipeId={recipeId} />
+      <RecipeIngredients ingredients={recipe.ingredients} recipeId={id} />
       <RecipePreparation recipe={recipe} />
     </div>
   );
