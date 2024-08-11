@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import css from './RecipeInfo.module.module.css';
+import css from './RecipeInfo.module.css';
 
-export const RecipeInfo = ({ title, description, time }) => {
+const RecipeInfo = ({ title, description, time, recipeId }) => {
   const [favorites, setFavorites] = useState([]);
 
   const isFavorite = favorites.includes(recipeId);
@@ -31,10 +31,12 @@ export const RecipeInfo = ({ title, description, time }) => {
       </button>
       <div className={css.timeContainer}>
         <svg className={css.clockIcon}>
-          <use href="./assets/icons.svg#icon-clock" />
+          <use href="../../../../assets/icons.svg#icon-clock" />
         </svg>
         <span className={css.span}>{time} min</span>
       </div>
     </section>
   );
 };
+
+export default RecipeInfo;
