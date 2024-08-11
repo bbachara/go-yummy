@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './FollowUs.module.css';
+import { SocialLinks } from 'components/Footer/SocialLinks/SocialLinks';
 
 const FollowUs = () => {
   return (
@@ -7,7 +8,7 @@ const FollowUs = () => {
       <div className={styles.followUs}>
         <h3>Follow us</h3>
         <div className={styles.socialIcons}>
-          {/* Ikony mediów społecznościowych */}
+          <SocialLinks />
         </div>
       </div>
       <div className={styles.popularRecipes}>
