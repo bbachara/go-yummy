@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  getShoppingList,
-  addShoppingList,
-  selectShoppingList,
-} from 'path/to/actions';
+// import React, { useState, useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import {
+//   getShoppingList,
+//   addShoppingList,
+//   selectShoppingList,
+// } from '';
 import css from './RecipeIngredients.module.css';
 
-export const RecipeIngredients = ({ ingredients }) => {
-  const dispatch = useDispatch();
+const RecipeIngredients = ({ ingredients }) => {
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getShoppingList());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getShoppingList());
+  // }, [dispatch]);
 
-  const shoppingList = useSelector(selectShoppingList);
+  // const shoppingList = useSelector(selectShoppingList);
 
   return (
     <section className={css.recipeIngredients}>
@@ -39,7 +39,7 @@ export const RecipeIngredients = ({ ingredients }) => {
                 <p className={css.measure}>{ingredient.measure}</p>
               </div>
               <div>
-                <input
+                {/* <input
                   className={css.checkbox}
                   type="checkbox"
                   id={ingredient._id}
@@ -54,7 +54,7 @@ export const RecipeIngredients = ({ ingredients }) => {
                       item.recipeId === ingredient.recipeId
                   )}
                   onChange={() => dispatch(addShoppingList(ingredient))}
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -63,3 +63,5 @@ export const RecipeIngredients = ({ ingredients }) => {
     </section>
   );
 };
+
+export default RecipeIngredients;

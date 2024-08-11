@@ -17,6 +17,7 @@ import SearchPage from './pages/SearchPage/Search';
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingList';
 import AddRecipes from './pages/AddRecipesPage/AddRecipes';
 import MyRecipes from './pages/MyRecipesPage/MyRecipes';
+import Recipe from './pages/RecipePage/Recipe';
 
 export const App = () => {
   return (
@@ -42,6 +43,16 @@ export const App = () => {
               <>
                 <Header />
                 <CategoriesPage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="recipes/:recipeId"
+            element={
+              <>
+                <Header />
+                <Recipe />
                 <Footer />
               </>
             }
@@ -88,7 +99,7 @@ export const App = () => {
             }
           />
           <Route
-            path="/shopping-list" 
+            path="/shopping-list"
             element={
               <>
                 <Header />
