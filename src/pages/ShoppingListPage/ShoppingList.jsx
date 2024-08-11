@@ -60,7 +60,7 @@ const ShoppingListPage = () => {
             ) : (
                 <div className={styles.emptyList}>
                     <img src={emptyImage} alt="Empty shopping list" className={styles.emptyImage} />
-                    <p>Shopping list is empty</p>
+                        <p className={styles.message} >Shopping list is empty</p>
                 </div>
             )}
         </div>
