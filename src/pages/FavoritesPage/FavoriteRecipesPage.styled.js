@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { mediaQueries } from 'style/mediaQueries';
 
 export const SectionFavorite = styled.section`
   padding: 114px 0 40px 0;
