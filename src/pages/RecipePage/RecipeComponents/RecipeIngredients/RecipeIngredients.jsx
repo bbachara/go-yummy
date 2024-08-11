@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  getShoppingList,
-  addShoppingList,
-  selectShoppingList,
-} from 'path/to/actions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import {
+//   getShoppingList,
+//   addShoppingList,
+//   selectShoppingList,
+// } from '';
 import css from './RecipeIngredients.module.css';
 
 export const RecipeIngredients = ({ ingredients }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getShoppingList());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getShoppingList());
+  // }, [dispatch]);
 
-  const shoppingList = useSelector(selectShoppingList);
+  // const shoppingList = useSelector(selectShoppingList);
 
   return (
     <section className={css.recipeIngredients}>

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import notFoundImage from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
+import css from './RecipePreparation.module.css';
 
 export const RecipePreparation = ({ recipe }) => {
   const { title, instructions, thumb } = recipe;
