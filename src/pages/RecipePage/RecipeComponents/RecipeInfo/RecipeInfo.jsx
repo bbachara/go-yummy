@@ -4,14 +4,14 @@ import css from './RecipeInfo.module.module.css';
 export const RecipeInfo = ({ title, description, time }) => {
   const [favorites, setFavorites] = useState([]);
 
-  const isFavorite = favorites.includes(recipe.id);
+  const isFavorite = favorites.includes(recipeId);
 
   const toggleFavorite = () => {
     try {
       if (isFavorite) {
-        setFavorites(favorites.filter(id => id !== recipe.id));
+        setFavorites(favorites.filter(id => id !== recipeId));
       } else {
-        setFavorites([...favorites, recipe.id]);
+        setFavorites([...favorites, recipeId]);
       }
     } catch (error) {
       console.log(error);
