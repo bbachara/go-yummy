@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { getOwnRecipeById, getRecipeById } from 'src/api/recipeAPI';
+import { getRecipeById } from 'src/api/recipeAPI';
 import RecipeInfo from './RecipeComponents/RecipeInfo';
 import RecipeIngredients from './RecipeComponents/RecipeIngredients';
 import RecipePreparation from './RecipeComponents/RecipePreparation';
 import Loader from 'src/components/Loader/Loader';
-import RecipesNotFound from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
+import notFoundImage from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
+import css from './Recipe.module.css';
 
 export const Recipe = () => {
   const { recipeId } = useParams();
@@ -19,9 +20,8 @@ export const Recipe = () => {
     const fetchRecipe = async () => {
       setIsLoading(true);
       try {
-        const data = search
-          ? await getOwnRecipeById(recipeId)
-          : await getRecipeById(recipeId);
+        const data = search;
+        getRecipeById(recipeId);
         setRecipe(data);
       } catch (error) {
         setError(error);
@@ -29,13 +29,24 @@ export const Recipe = () => {
         setIsLoading(false);
       }
     };
-
     fetchRecipe();
   }, [recipeId, search]);
 
   if (isLoading) return <Loader />;
 
-  if (!recipe) return <RecipesNotFound text="Can't find your recipe..." />;
+  if (!recipe)
+    return (
+      <div>
+        <img
+          src={notFoundImage.default}
+          alt="not found"
+          className={css.image}
+        />
+        <p className={css.p}>Can't find your recipe...</p>
+      </div>
+    );
+
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>

@@ -96,6 +96,7 @@
   }
   .searchButton {
     border-radius: 24px 44px;
+    border: solid 1px #22252a;
     width: 113px;
     height: 52px;
     background-color: #22252a;
@@ -221,6 +222,7 @@
   .searchButton {
     border-radius: 24px 44px;
     width: 145px;
+    border: solid 1px #22252a;
     height: 59px;
     background-color: #22252a;
     color: #fafafa;
@@ -349,6 +351,7 @@
     width: 161px;
     height: 71px;
     background-color: #22252a;
+    border: solid 1px #22252a;
     color: #fafafa;
     position: absolute;
     right: 0px;
