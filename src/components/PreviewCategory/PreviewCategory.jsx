@@ -32,27 +32,26 @@ export const PreviewCategory = () => {
     );
   }, [categories]);
 
-  const fetchRecipes = async () => {
-    const fetchedRecipes = {};
-    for (const popularCategory of popularCategories) {
-      try {
-        const response = await fetchRecipesByCategory(
-          popularCategory,
-          currentToken
-        );
-        fetchedRecipes[popularCategory] = response.recipe;
-      } catch (error) {
-        console.error(`Error fetching recipes for ${popularCategory}:`, error);
-      }
-    }
-    setRecipes(fetchedRecipes);
-  };
-
+  
   useEffect(() => {
     if (popularCategories.length > 0) {
-      fetchRecipes();
+      const fetchRecipes = async () => {
+        const fetchedRecipes = {};
+        for (const popularCategory of popularCategories) {
+          try {
+            const response = await fetchRecipesByCategory(
+              popularCategory,
+              currentToken
+            );
+            fetchedRecipes[popularCategory] = response.recipe;
+          } catch (error) {
+            console.error(`Error fetching recipes for ${popularCategory}:`, error);
+          }
+        }
+        setRecipes(fetchedRecipes);
+      };fetchRecipes();
     }
-  }, [popularCategories]);
+  }, [popularCategories, currentToken]);
 
   const updateRecipesToShow = () => {
     const width = window.innerWidth;
