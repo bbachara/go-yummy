@@ -11,10 +11,11 @@ import { Login } from './pages/Auth/Login/Login';
 import { NotFound } from './pages/NotFoundPage/NotFound';
 import css from './App.module.css';
 import CategoriesPage from './pages/CategoriesPage/Categories';
+import Favorite from './pages/Favorite/Favorite';
 // import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
-import SearchPage from './pages/SearchPage/Search'; 
+import SearchPage from './pages/SearchPage/Search';
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingList';
-import AddRecipes from './pages/AddRecipesPage/AddRecipes'
+import AddRecipes from './pages/AddRecipesPage/AddRecipes';
 
 export const App = () => {
   return (
@@ -45,21 +46,12 @@ export const App = () => {
             }
           />
           <Route
-            path="/add-recipes"
-            element={
-              <>
-                <Header />
-                <AddRecipes />
-                <Footer />
-              </>
-            }
-          />
-          <Route
             path="/favorites"
             element={
               <>
                 <Header />
                 {/* <FavoriteRecipesPage /> */}
+                <Favorite />
                 <Footer />
               </>
             }
@@ -73,9 +65,9 @@ export const App = () => {
                 <Footer />
               </>
             }
-          /> 
+          />
           <Route
-            path="/" 
+            path="/shopping-list" 
             element={
               <>
                 <Header />
