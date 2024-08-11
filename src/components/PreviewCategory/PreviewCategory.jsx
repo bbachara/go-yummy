@@ -6,14 +6,12 @@ import css from './PreviewCategory.module.css';
 import { useState, useEffect, useMemo } from 'react';
 import { PreviewRecipeCard } from '../PreviewRecipeCard/PreviewRecipeCard';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 export const PreviewCategory = () => {
   const [categories, setCategories] = useState([]);
   const [recipes, setRecipes] = useState({});
   const currentToken = localStorage.getItem('token');
   const [recipesToShow, setRecipesToShow] = useState(4);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getCategories = async () => {
@@ -73,10 +71,6 @@ export const PreviewCategory = () => {
     return () => window.removeEventListener('resize', updateRecipesToShow);
   }, []);
 
-  const GoToRecipeClick = recipeId => {
-    navigate(`/recipes/${recipeId}`);
-  };
-
   // console.log('Categories:', categories);
   // console.log('Popular Categories:', popularCategories);
   // console.log('Recipes', recipes);
@@ -87,7 +81,7 @@ export const PreviewCategory = () => {
         <ul className={css.popularCategoryUl} key={popularCategory._id}>
           <li className={css.popularCategoryLi}>
             <div className={css.popularCategoryHeader}>
-              <Link to="/categories/">
+              <Link to={`/categories/${popularCategory.toLowerCase()}`}>
                 <h3 className={css.popularCategoryHeading}>
                   {popularCategory}
                 </h3>
@@ -98,12 +92,11 @@ export const PreviewCategory = () => {
                 Object.values(recipes[popularCategory])
                   .slice(0, recipesToShow)
                   .map(recipe => (
-                    <Link to="/recipes/">
+                    <Link to={`/recipes/${recipe._id}`}>
                       <PreviewRecipeCard
                         className={css.popularRecipeLi}
                         key={recipe._id}
                         recipe={recipe}
-                        onClick={GoToRecipeClick}
                       />
                     </Link>
                   ))}
