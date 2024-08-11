@@ -77,7 +77,7 @@ export default function CategoriesPage() {
                 <Link to={`/recipes/${recipe._id}`} key={index} className={styles.recipeItem}>
                   <h3>{recipe.title}</h3>
                   <img src={recipe.thumb} alt={recipe.title} className={styles.recipeImage} />
-                  {/* <p>{recipe.description}</p> */}
+            
                 </Link>
               ))}
             </ul>
