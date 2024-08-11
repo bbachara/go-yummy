@@ -16,6 +16,7 @@ import Favorite from './pages/Favorite/Favorite';
 import SearchPage from './pages/SearchPage/Search';
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingList';
 import AddRecipes from './pages/AddRecipesPage/AddRecipes';
+import MyRecipes from './pages/MyRecipesPage/MyRecipes';
 
 export const App = () => {
   return (
@@ -41,6 +42,26 @@ export const App = () => {
               <>
                 <Header />
                 <CategoriesPage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/add-recipes"
+            element={
+              <>
+                <Header />
+                <AddRecipes />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/my-recipes"
+            element={
+              <>
+                <Header />
+                <MyRecipes />
                 <Footer />
               </>
             }

@@ -1,179 +1,95 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+    width: 100%;
+    margin-left: auto;
+    padding-left: 16px;
+
+    @media (min-width: 768px) {
+        margin: 0 auto;
+        padding-left: 32px;
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 0;
+    }
 }
 
 .header {
-    color: #1c2b42;
-    font-size: 36px;
-    margin-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    color: #001833;
+
+    @media (min-width: 768px) {
+        padding-top: 72px;
+        font-size: 32px;
+        line-height: 32px;
+        padding-bottom: 40px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 104px;
+        padding-bottom: 50px;
+        font-size: 44px;
+        line-height: 44px;
+    }
 }
 
-/* Form and Form Elements */
+.contentContainer {
+    @media (min-width: 1440px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.reciepeContainer {
+    @media (min-width: 1440px) {
+        width: 800px;
+    }
+}
+
+.formAndImageContainer {
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+        
+    @media (min-width: 1440px) {
+        gap: 50px
+    }
+}
+
 .formContainer {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    gap: 20px;
-}
-
-.imageUpload {
-    flex: 1;
-}
-
-.imageBox {
-    width: 100%;
-    height: 300px;
-    background-color: #a3c649;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-}
-
-.uploadIcon {
-    font-size: 50px;
-    color: #ffffff;
-}
-
-.form {
-    flex: 2;
+    width: 343px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    position: relative;
-}
 
-/* Media Queries */
-@media screen and (max-width: 767px) {
-    .form {
-        margin-bottom: 72px;
+    @media (min-width: 768px) {
+        width: 393px;
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
-    .form {
+.ingredientsAndPreparationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    margin-top: 44px;
+    margin-bottom: 44px;
+    
+    @media (min-width: 768px) {
+        gap: 100px;
+        margin-top: 100px;
         margin-bottom: 100px;
+        align-items: start;
     }
-}
-
-/* Input Group */
-.inputGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.inputGroup label {
-    font-weight: bold;
-    color: #1c2b42;
-}
-
-.inputGroup input,
-.inputGroup textarea,
-.inputGroup select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-/* Ingredients Section */
-.ingredientsSection {
-    margin-top: 20px;
-}
-
-.ingredientsSection h3 {
-    color: #1c2b42;
-}
-
-.ingredientRow {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.ingredientRow input,
-.ingredientRow select {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.addIngredientBtn {
-    background-color: #a3c649;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Add Button */
-.addButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 129px;
-    height: 46px;
-    background-color: #a3c649;
-    /* lub ${p => p.theme.colors.recipeBlockBtnBg}; */
-    color: #ffffff;
-    /* lub ${p => p.theme.colors.btnTextLight}; */
-    font-size: 16px;
-    line-height: 1.5;
-    /* lub ${p => p.theme.lineHeights.searchSelect}; */
-    padding: 12px 48px;
-    border: none;
-    border-radius: 80px 80px 80px 80px;
-    /* To odpowiada border-top-left-radius: 30px; itd. */
-    transition: background-color 0.3s ease;
-    /* lub ${p => p.theme.transitions.main}; */
-
-    &:focus:not(:disabled),
-    &:hover:not(:disabled) {
-        color: #ffffff;
-        /* lub ${p => p.theme.colors.addBtnHoverText}; */
-        background-color: #9cbd4f;
-        /* lub ${p => p.theme.colors.addBtnHoverBg}; */
-    }
-
-    &[disabled] {
-        opacity: 0.7;
-        pointer-events: none;
-        cursor: not-allowed;
-    }
-
-    @media screen and (min-width: 768px) {
-        width: 161px;
-        height: 52px;
-    }
-}
-
-/* Sidebar */
-.sidebar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.followUs h3,
-.popularRecipes h3 {
-    color: #1c2b42;
-}
-
-.socialIcons {
-    display: flex;
-    gap: 10px;
-}
-
-.popularRecipes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }

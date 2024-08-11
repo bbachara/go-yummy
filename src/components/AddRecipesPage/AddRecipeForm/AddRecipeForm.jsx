@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import IngredientForm from '../IngredientForm/IngredientForm';
-import PreparationForm from '../PreparationForm/PreparationForm';
 import styles from './AddRecipeForm.module.css';
 
 const AddRecipeForm = ({ onSubmit }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [ingredients, setIngredients] = useState([{ name: '', quantity: '', unit: 'tbs' }]);
-  const [preparation, setPreparation] = useState('');
+  const [category, setCategory] = useState('breakfast');
+  const [cookTime, setCookTime] = useState('15');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const recipe = { title, description, ingredients, preparation };
+    const recipe = { title, description, category, cookTime };
     console.log('New recipe:', recipe);
     onSubmit(recipe);
   };
@@ -36,14 +34,15 @@ const AddRecipeForm = ({ onSubmit }) => {
         ></textarea>
       </div>
       <div className={styles.inputGroup}>
-        <select>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="breakfast">Breakfast</option>
           <option value="lunch">Lunch</option>
           <option value="dinner">Dinner</option>
         </select>
       </div>
       <div className={styles.inputGroup}>
-        <select>
+        <select value={cookTime} onChange={(e) => setCookTime(e.target.value)}>
+          <option value="15">15 min</option>
           <option value="30">30 min</option>
           <option value="45">45 min</option>
           <option value="60">60 min</option>
@@ -51,9 +50,6 @@ const AddRecipeForm = ({ onSubmit }) => {
           <option value="90">90 min</option>
         </select>
       </div>
-      <IngredientForm ingredients={ingredients} setIngredients={setIngredients} />
-      <PreparationForm preparation={preparation} setPreparation={setPreparation} />
-      <button type="submit" className={styles.addButton}>Add</button>
     </form>
   );
 };
