@@ -1,29 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { MainPageTitle } from '../../components/MyRecipesPage/MainPageTitle/MainPageTitle';
 import { fetchShoppingList, removeItem } from '../../api/homePageAPI'; 
-import './ShoppingList.module.css';
+import styles from './ShoppingList.module.css';
+import emptyImage from './images/shoppinglist/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png';
 
 const ShoppingListPage = () => {
     const [shoppingList, setShoppingList] = useState([]);
-    const token = localStorage.getItem('token'); // Pobierz token z localStorage
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
-        console.log('Token:', token); // Sprawdzanie, czy token jest pobierany
         if (token) {
-            // Pobierz listę zakupów z API, gdy komponent jest montowany
             fetchShoppingList(token).then(data => setShoppingList(data)).catch(err => {
                 console.error('Failed to fetch shopping list:', err);
             });
         } else {
             console.error('No auth token found');
-            // Opcjonalnie możesz przekierować użytkownika na stronę logowania
             window.location.href = '/signin';
         }
     }, [token]);
 
     const handleRemove = (itemId) => {
         if (token) {
-            // Usuń element z listy zakupów
             removeItem(itemId, token).then(() => {
                 setShoppingList(prevList => prevList.filter(item => item.id !== itemId));
             }).catch(err => {
@@ -35,39 +31,41 @@ const ShoppingListPage = () => {
     };
 
     return (
-        <div className="shopping-list-page">
-            <MainPageTitle title="Shopping list" />
-            <table>
-                <thead>
-                    <tr>
-                        <th>Products</th>
-                        <th>Number</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {shoppingList.length > 0 ? (
-                        shoppingList.map(item => (
-                            <tr key={item.id}>
-                                <td>
-                                    <img src={item.image || 'placeholder.png'} alt={item.name} />
+        <div className={styles.shoppingListPage}>
+            <h1 className={styles.pageTitle}>Shopping list</h1>
+            {shoppingList.length > 0 ? (
+                <table className={styles.shoppingTable}>
+                    <thead>
+                        <tr className={styles.tableHeader}>
+                            <th>Products</th>
+                            <th>Number</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {shoppingList.map(item => (
+                            <tr key={item.id} className={styles.tableRow}>
+                                <td className={styles.productCell}>
+                                    <img src={item.image || 'placeholder.png'} alt={item.name} className={styles.productImage} />
                                     {item.name}
                                 </td>
-                                <td>{item.quantity}</td>
-                                <td>
-                                    <button onClick={() => handleRemove(item.id)}>X</button>
+                                <td className={styles.numberCell}>{item.quantity}</td>
+                                <td className={styles.removeCell}>
+                                    <button onClick={() => handleRemove(item.id)} className={styles.removeButton}>X</button>
                                 </td>
                             </tr>
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan="3">No items in your shopping list.</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <div className={styles.emptyList}>
+                    <img src={emptyImage} alt="Empty shopping list" className={styles.emptyImage} />
+                    <p>Shopping list is empty</p>
+                </div>
+            )}
         </div>
     );
+    
 };
 
 export default ShoppingListPage;

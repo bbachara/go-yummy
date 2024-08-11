@@ -46,16 +46,6 @@ export const App = () => {
             }
           />
           <Route
-            path="/add-recipes"
-            element={
-              <>
-                <Header />
-                <AddRecipes />
-                <Footer />
-              </>
-            }
-          />
-          <Route
             path="/favorites"
             element={
               <>
@@ -77,7 +67,7 @@ export const App = () => {
             }
           />
           <Route
-            path="/"
+            path="/shopping-list" 
             element={
               <>
                 <Header />
