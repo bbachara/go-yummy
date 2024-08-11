@@ -48,7 +48,7 @@ export const App = () => {
             }
           />
           <Route
-            path="recipes/:id"
+            path="recipes/:recipeId"
             element={
               <>
                 <Header />
