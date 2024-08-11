@@ -22,7 +22,7 @@
 }
 
 .inputGroup textarea {
-    resize: vertical;
+    resize: none;
     max-height: 40px;
 }
 

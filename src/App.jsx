@@ -14,7 +14,8 @@ import CategoriesPage from './pages/CategoriesPage/Categories';
 // import FavoriteRecipesPage from './pages/FavoritesPage/FavoriteRecipesPage/FavoriteRecipesPage';
 import SearchPage from './pages/SearchPage/Search'; 
 import ShoppingListPage from './pages/ShoppingListPage/ShoppingList';
-import AddRecipes from './pages/AddRecipesPage/AddRecipes'
+import AddRecipes from './pages/AddRecipesPage/AddRecipes';
+import MyRecipes from './pages/MyRecipesPage/MyRecipes';
 
 export const App = () => {
   return (
@@ -50,6 +51,16 @@ export const App = () => {
               <>
                 <Header />
                 <AddRecipes />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/my-recipes"
+            element={
+              <>
+                <Header />
+                <MyRecipes />
                 <Footer />
               </>
             }
