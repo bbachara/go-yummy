@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import notFoundImage from 'src/assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png';
 
 export const RecipePreparation = ({ recipe }) => {
   const { title, instructions, thumb } = recipe;
@@ -20,11 +21,7 @@ export const RecipePreparation = ({ recipe }) => {
           </ol>
         </div>
         <img
-          src={
-            thumb ||
-            require('../../../assets/NotFoundPage/404-page-not-found-with-people-connecting-a-plug-mobile.png')
-              .default
-          }
+          src={thumb || notFoundImage.default}
           alt={title}
           className={css.image}
         />

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getShoppingList,
+  addShoppingList,
+  selectShoppingList,
+} from 'path/to/actions';
 import css from './RecipeIngredients.module.css';
 
-export const RecipeIngredients = ({ ingredients, recipeId }) => {
+export const RecipeIngredients = ({ ingredients }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,18 +42,18 @@ export const RecipeIngredients = ({ ingredients, recipeId }) => {
                 <input
                   className={css.checkbox}
                   type="checkbox"
-                  id={ingridient._id}
+                  id={ingredient._id}
                   checked={shoppingList.some(
                     item =>
-                      item.ttl === ingridient.ttl &&
-                      item.recipeId === ingridient.recipeId
+                      item.ttl === ingredient.ttl &&
+                      item.recipeId === ingredient.recipeId
                   )}
                   disabled={shoppingList.some(
                     item =>
-                      item.ttl === ingridient.ttl &&
-                      item.recipeId === ingridient.recipeId
+                      item.ttl === ingredient.ttl &&
+                      item.recipeId === ingredient.recipeId
                   )}
-                  onChange={() => dispatch(addShoppingList(ingridient))}
+                  onChange={() => dispatch(addShoppingList(ingredient))}
                 />
               </div>
             </div>
@@ -57,27 +63,3 @@ export const RecipeIngredients = ({ ingredients, recipeId }) => {
     </section>
   );
 };
-
-// <div>
-//   {ingredients?.map(({ _id, measure, img, name }) => {
-//     return (
-//       <div key={`${measure}_${_id}`}>
-//         <div>
-//           <img src={img} alt="name" />
-//           <p>{name}</p>
-//         </div>
-
-//         <div>
-//           <p>
-//             {measure ?? 'No info'}
-//           </IngredientMeasure>
-//           <CustomCheckbox
-//             ingredient={{ _id, name, img, measure }}
-//             shoppingList={shoppingList}
-//             recipeId={recipeId}
-//           />
-//         </div>
-//       </div>
-//     );
-//   })}
-// </div>

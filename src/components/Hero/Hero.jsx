@@ -16,7 +16,7 @@ export const Hero = () => {
       setSearch('');
       return;
     }
-    navigate(`/search?query=${search}&type=ingredients`);
+    navigate(`/search?query=${search}`);
     setSearch('');
   };
 
@@ -48,18 +48,18 @@ export const Hero = () => {
             <span className={css.accent}>Delicious and healthy</span> way to
             enjoy a variety of fresh ingredients in one satisfying meal
           </p>
-          <Link to="/recipes/categories/Breakfast">
+          <Link to="/categories/">
             <button className={css.seeRecipesButton}>See recipes</button>
           </Link>
         </div>
       </div>
       <div className={css.searchDiv}>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className={css.searchForm}>
           <label className={css.searchLabel}>Search phrase</label>
           <input
             className={css.searchInput}
             type="text"
-            placeholder="What would you like to make?"
+            placeholder="Search..."
             value={search}
             onChange={handleSearch}
           ></input>
