@@ -60,7 +60,7 @@ export const PreviewCategory = () => {
     const width = window.innerWidth;
     if (width > 1440) {
       setRecipesToShow(4);
-    } else if (width > 768) {
+    } else if (width < 1439) {
       setRecipesToShow(2);
     } else {
       setRecipesToShow(1);
@@ -108,7 +108,7 @@ export const PreviewCategory = () => {
                     </Link>
                   ))}
             </ul>
-            <Link to="/categories/">
+            <Link className={css.seeAllPosition} to="/categories/">
               <button className={css.seeAll}>See all</button>
             </Link>
           </li>

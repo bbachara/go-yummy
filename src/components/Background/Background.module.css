@@ -1,24 +1,110 @@
-/* @media (min-width: 1440px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .background {
-    z-index: -10;
+    z-index: -1000;
     position: absolute;
+    width: 408px;
+    margin: auto;
+    height: 100%;
+    top: 0;
+    overflow-x: clip;
   }
   .spinachTopRightDesktop {
     position: absolute;
+    height: 500px;
+    width: 500px;
     z-index: -7;
+    left: 0px;
+    top: 300px;
+  }
+  .bgDesktop {
+    height: 600px;
+    width: 600px;
+    z-index: -88;
+    position: absolute;
+    top: 90px;
+    left: 230px;
+    transform: rotate(35deg);
+  }
+  .spinachTopLeftDesktop {
+    height: 184px;
+    width: auto;
+    z-index: -1;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1439px) {
+  .background {
+    z-index: -1000;
+    position: absolute;
+    width: 768px;
+    margin: auto;
+    height: 100%;
+    top: 0;
+    overflow-x: clip;
+  }
+  .spinachTopRightDesktop {
+    position: absolute;
+    height: 700px;
+    width: auto;
+    z-index: -7;
+    left: 200px;
+    top: -40px;
+  }
+  .bgDesktop {
+    height: 792px;
+    width: 600px;
+    z-index: -88;
+    position: absolute;
+    top: -200px;
+    left: 650px;
+    transform: rotate(20deg);
+  }
+  .spinachTopLeftDesktop {
+    height: 315px;
+    width: auto;
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+    left: 00px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .background {
+    z-index: -1000;
+    position: absolute;
+    width: 1440px;
+    margin: auto;
+    height: 100%;
+    overflow-x: clip;
+
+    top: 0;
+  }
+  .spinachTopRightDesktop {
+    position: absolute;
+    height: 900px;
+    width: auto;
+    z-index: -7;
+    left: 500px;
+    top: -150px;
   }
   .bgDesktop {
     height: 700px;
     width: 900px;
     z-index: -88;
     position: absolute;
-    bottom: 3400px;
-    left: 750px;
+    top: -70px;
+    left: 700px;
   }
-
   .spinachTopLeftDesktop {
-    height: 200px;
+    height: 474px;
+    width: auto;
     z-index: -1;
     position: absolute;
+    top: -60px;
+    left: -40px;
   }
-} */
+}
