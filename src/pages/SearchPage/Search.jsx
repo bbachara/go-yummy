@@ -4,6 +4,13 @@ import { fetchRecipesByText } from 'api/homePageAPI';
 import Notiflix from 'notiflix';
 import { useLocation } from 'react-router-dom';
 
+import Vegetables from '../../assets/SearchPage/vegetable-fruit-basket-desktop.png';
+import Vegetables2 from '../../assets/SearchPage/vegetable-fruit-basket-desktop@x2.png';
+import VegetablesT from '../../assets/SearchPage/vegetable-fruit-basket-tablet.png';
+import VegetablesT2 from '../../assets/SearchPage/vegetable-fruit-basket-tablet@x2.png';
+import VegetablesM from '../../assets/SearchPage/vegetable-fruit-basket-mobile.png';
+import VegetablesM2 from '../../assets/SearchPage/vegetable-fruit-basket-mobile@x2.png';
+
 const SearchPage = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -59,7 +66,18 @@ const SearchPage = () => {
           Search
         </button>
       </div>
-      {error && <p className={css.error}>{error}</p>}
+      {error && (
+          <div className={css.errorContainer}>
+          <p className={css.error}>{error}</p>
+          <picture>
+            <source srcSet={`${VegetablesM}, ${VegetablesM2} 2x`} media="(max-width: 599px)" />
+            <source srcSet={`${VegetablesT}, ${VegetablesT2} 2x`} media="(min-width: 600px) and (max-width: 1199px)" />
+            <source srcSet={`${Vegetables}, ${Vegetables2} 2x`} media="(min-width: 1200px)" />
+            <img src={Vegetables} alt="Vegetable and Fruit Basket" className={css.image} />
+          </picture>
+        </div>
+        )
+      }
       <div className={css.results}>
         {results.map((result, index) => (
           <div key={index} className={css.resultCard}>
