@@ -11,14 +11,15 @@ export const StyledTitle = styled.h2`
 
   &:hover,
   :focus {
-    color: ${props => props.isLink ? props.theme.colors.green : props.theme.text.title};
+    color: ${props => props.$isLink ? props.theme.colors.green : props.theme.text.title};
   }
 
-    @media screen and (min-width: 768px) {
-      font-size: 32px;
-    }
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
 
-    @media screen and (min-width: 1280px) {
-      font-size: 44px;
-    }
-`
+  @media screen and (min-width: 1280px) {
+    font-size: 44px;
+  } 
+    
+`;
