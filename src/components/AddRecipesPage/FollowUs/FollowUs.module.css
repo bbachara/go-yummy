@@ -1,0 +1,6 @@
+.socialIcons a svg {
+    color: #8BAA36 !important;
+}
+.socialIcons a:hover svg {
+    color: #1E1F28 !important;
+}
