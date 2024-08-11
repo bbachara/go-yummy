@@ -2,7 +2,7 @@ import {
   fetchPopularCategories,
   fetchRecipesByCategory,
 } from 'api/homePageAPI';
-import css from '../PreviewCategoryCard/PreviewCategoryCard.module.css';
+import css from './PreviewCategory.module.css';
 import { useState, useEffect, useMemo } from 'react';
 import { PreviewRecipeCard } from '../PreviewRecipeCard/PreviewRecipeCard';
 import { Link } from 'react-router-dom';

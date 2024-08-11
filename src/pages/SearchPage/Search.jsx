@@ -63,8 +63,14 @@ const SearchPage = () => {
       <div className={css.results}>
         {results.map((result, index) => (
           <div key={index} className={css.resultCard}>
-            <h2>{result.title}</h2>
-            <p>{result.description}</p>
+            <img
+              className={css.resultImg}
+              alt={result.title}
+              src={result.preview}
+              width="100%"
+              height="100%"
+            />
+            <div className={css.resultName}>{result.title}</div>
           </div>
         ))}
       </div>
