@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPopularCategories, fetchRecipesByCategory } from '../../api/homePageAPI'; 
 import styles from './Categories.module.css'; 
+import { Link } from 'react-router-dom';
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -73,11 +74,11 @@ export default function CategoriesPage() {
           ) : recipes.length > 0 ? (
             <ul className={styles.recipeList}>
               {recipes.map((recipe, index) => (
-                <li key={index} className={styles.recipeItem}>
+                <Link to={`/recipes/${recipe._id}`} key={index} className={styles.recipeItem}>
                   <h3>{recipe.title}</h3>
                   <img src={recipe.thumb} alt={recipe.title} className={styles.recipeImage} />
                   {/* <p>{recipe.description}</p> */}
-                </li>
+                </Link>
               ))}
             </ul>
           ) : (
