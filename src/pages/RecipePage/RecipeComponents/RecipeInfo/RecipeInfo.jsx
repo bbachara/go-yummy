@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clockIcon from '../../../../assets/icons.svg#icon-clock';
 import css from './RecipeInfo.module.css';
 
 const RecipeInfo = ({ title, description, time, recipeId }) => {
@@ -20,20 +21,23 @@ const RecipeInfo = ({ title, description, time, recipeId }) => {
 
   return (
     <section className={css.recipeInfo}>
-      <div className={css.textContainer}>
-        <h1 className={css.h1}>{title}</h1>
-        <p className={css.p}>{description}</p>
-      </div>
-      <button type="button" className={css.button} onClick={toggleFavorite}>
-        {isFavorite
-          ? 'Remove from favorite recipes'
-          : 'Add to favorite recipes'}
-      </button>
-      <div className={css.timeContainer}>
-        <svg className={css.clockIcon}>
-          <use href="../../../../assets/icons.svg#icon-clock" />
-        </svg>
-        <span className={css.span}>{time} min</span>
+      <div className={css.wrapper}>
+        <div className={css.textContainer}>
+          <h1 className={css.h1}>{title}</h1>
+          <p className={css.p}>{description}</p>
+        </div>
+        <button type="button" className={css.button} onClick={toggleFavorite}>
+          {isFavorite
+            ? 'Remove from favorite recipes'
+            : 'Add to favorite recipes'}
+        </button>
+        <div className={css.timeContainer}>
+          <img className={css.clockIcon} src={clockIcon} alt="clock"></img>
+          {/* <svg className={css.clockIcon} aria-hidden="true">
+            <use href={clockIcon}></use>
+          </svg> */}
+          <span className={css.span}>Time: {time} min</span>
+        </div>
       </div>
     </section>
   );
