@@ -14,8 +14,6 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [ingredients, setIngredients] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -24,14 +22,13 @@ const Recipe = () => {
         const token = localStorage.getItem('token');
         const response = await getRecipeById(token, id);
         setRecipe(response);
-        setIngredients(response.ingredients);
-        setIsFavorite(response.favorite ? true : false);
       } catch (error) {
         setError(error);
       } finally {
         setIsLoading(false);
       }
     };
+
     fetchRecipe();
   }, [id]);
 
@@ -54,7 +51,7 @@ const Recipe = () => {
         description={recipe.description}
         time={recipe.time}
       />
-      <RecipeIngredients ingredients={ingredients} recipeId={id} />
+      <RecipeIngredients ingredients={recipe.ingredients} recipeId={id} />
       <RecipePreparation recipe={recipe} />
     </div>
   );

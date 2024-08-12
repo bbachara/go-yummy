@@ -192,6 +192,9 @@
 }
 
 .measure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fafafa;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -208,7 +211,7 @@
     font-size: 18px;
     line-height: 27px;
     padding: 4px 8px;
-    min-width: 68px;
+    min-width: 80px;
   }
 }
 
