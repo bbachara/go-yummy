@@ -10,26 +10,28 @@ import css from './Recipe.module.css';
 
 const Recipe = () => {
   const { id } = useParams();
- 
+
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  console.log(id)
   useEffect(() => {
     const fetchRecipe = async () => {
       setIsLoading(true);
-      try { const token = localStorage.getItem('token');
-        const response = await getRecipeById(token, id); // Popraw to na wywołanie API
-        console.log('Resonse for:',response)
-        setRecipe(response); // Ustaw wynik na `recipe`
+      try {
+        const token = localStorage.getItem('token');
+        const response = await getRecipeById(token, id);
+        setRecipe(response);
+        setIngredients(response.ingredients);
+        setIsFavorite(response.favorite ? true : false);
       } catch (error) {
         setError(error);
       } finally {
         setIsLoading(false);
       }
     };
-
     fetchRecipe();
   }, [id]);
 
@@ -46,13 +48,13 @@ const Recipe = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className={css.container}>
       <RecipeInfo
         title={recipe.title}
         description={recipe.description}
         time={recipe.time}
       />
-      <RecipeIngredients ingredients={recipe.ingredients} recipeId={id} />
+      <RecipeIngredients ingredients={ingredients} recipeId={id} />
       <RecipePreparation recipe={recipe} />
     </div>
   );
