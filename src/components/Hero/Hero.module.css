@@ -23,7 +23,11 @@
     line-height: 60px;
     letter-spacing: -0.005em;
     text-align: center;
-    color: #22252a;
+    color: var(--dark-color);
+  }
+
+  .soyummy.themeDark {
+    color: var(--white-color);
   }
   .accent {
     color: #8baa36;
