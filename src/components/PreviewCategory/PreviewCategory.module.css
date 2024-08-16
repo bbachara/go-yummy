@@ -11,7 +11,7 @@
     width: 195px;
     height: 46px;
     margin: 40px auto 100px;
-    border: 2px solid #8baa36;
+    border: 2px solid var(--green-color);
     color: #22252a;
     border-radius: 24px 44px;
     background-color: transparent;
@@ -91,7 +91,7 @@
     width: 239px;
     height: 61px;
     margin: 32px auto 100px;
-    border: 2px solid #8baa36;
+    border: 2px solid var(--green-color);
     color: #22252a;
     border-radius: 24px 44px;
     background-color: transparent;
@@ -141,9 +141,9 @@
   .seeAll {
     width: 94px;
     height: 38px;
-    border: 1px solid #8aa936;
+    border: 1px solid var(--green-color);
     border-radius: 6px;
-    background-color: #8aa936;
+    background-color: var(--green-color);
     color: #fafafa;
     font-family: Poppins;
     font-size: 14px;
@@ -172,7 +172,7 @@
     width: 239px;
     height: 61px;
     margin: 102px auto 118px;
-    border: 2px solid #8baa36;
+    border: 2px solid var(--green-color);
     color: #22252a;
     border-radius: 24px 44px;
     background-color: transparent;
@@ -221,9 +221,9 @@
   .seeAll {
     width: 94px;
     height: 38px;
-    border: 1px solid #8aa936;
+    border: 1px solid var(--green-color);
     border-radius: 6px;
-    background-color: #8aa936;
+    background-color: var(--green-color);
     color: #fafafa;
     font-family: Poppins;
     font-size: 14px;
@@ -243,15 +243,15 @@
 @media (min-width: 320px) {
   .popularCategoryHeading:hover,
   .popularCategoryHeading:focus {
-    color: #8baa36;
+    color: var(--green-color);
   }
   .seeAll:hover {
     background-color: #22252a;
   }
 
   .previewCategoriesOtherCategories:hover {
-    color: #fafafa;
-    background-color: #8baa36;
+    color: var(--green-color);
+    background-color: var(--green-color);
   }
 
   a {
