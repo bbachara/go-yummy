@@ -60,9 +60,9 @@
   .seeAll {
     width: 94px;
     height: 38px;
-    border: 1px solid #8aa936;
+    border: 1px solid var(--green-color);
     border-radius: 6px;
-    background-color: #8aa936;
+    background-color: var(--green-color);
     color: #fafafa;
     font-family: Poppins;
     font-size: 14px;
