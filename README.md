@@ -1,1 +1,1 @@
-https://bbachara.github.io/go-yummy/
+website: https://bbachara.github.io/go-yummy/
